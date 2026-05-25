@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "@flesh-and-blood/cards": "^3.8.22"
   }

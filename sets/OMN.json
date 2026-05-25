@@ -1,0 +1,2876 @@
+[
+  {
+    "cardIdentifier": "aethersling-red",
+    "name": "Aethersling",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN134",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "arc-ramp-red",
+    "name": "Arc Ramp",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN100",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "arc-ramp-yellow",
+    "name": "Arc Ramp",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN101",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "arc-ramp-blue",
+    "name": "Arc Ramp",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN102",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "arcanic-cunning-red",
+    "name": "Arcanic Cunning",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN088",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "arcanic-cunning-yellow",
+    "name": "Arcanic Cunning",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN089",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "arcanic-cunning-blue",
+    "name": "Arcanic Cunning",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN090",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "arcanic-reproach-blue",
+    "name": "Arcanic Reproach",
+    "rarity": "Majestic",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN052",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "astral-assault-red",
+    "name": "Astral Assault",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN160",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "astral-assault-yellow",
+    "name": "Astral Assault",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN161",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "astral-assault-blue",
+    "name": "Astral Assault",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN162",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "astral-bridge-red",
+    "name": "Astral Bridge",
+    "rarity": "Majestic",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN098",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "astral-strike-red",
+    "name": "Astral Strike",
+    "rarity": "Majestic",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN145",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "auric-shards-red",
+    "name": "Auric Shards",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "AZS015",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "auric-shards-yellow",
+    "name": "Auric Shards",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN028",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "auric-shards-blue",
+    "name": "Auric Shards",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN029",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "beckoning-brilliance-red",
+    "name": "Beckoning Brilliance",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN148",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "blink-of-an-eye-red",
+    "name": "Blink of an Eye",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "AZS007",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "browbeat-blue",
+    "name": "Browbeat",
+    "rarity": "Majestic",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN213",
+    "classes": [
+      "Generic"
+    ]
+  },
+  {
+    "cardIdentifier": "brush-off-red",
+    "name": "Brush Off",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN222",
+    "classes": [
+      "Generic"
+    ]
+  },
+  {
+    "cardIdentifier": "brush-off-yellow",
+    "name": "Brush Off",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN223",
+    "classes": [
+      "Generic"
+    ]
+  },
+  {
+    "cardIdentifier": "brush-off-blue",
+    "name": "Brush Off",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN224",
+    "classes": [
+      "Generic"
+    ]
+  },
+  {
+    "cardIdentifier": "calmveil-of-volthaven-red",
+    "name": "Calmveil of Volthaven",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN184",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "calmveil-of-volthaven-yellow",
+    "name": "Calmveil of Volthaven",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN185",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "calmveil-of-volthaven-blue",
+    "name": "Calmveil of Volthaven",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN186",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "caress-of-the-reaper-red",
+    "name": "Caress of the Reaper",
+    "rarity": "Majestic",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN087",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "chromatic-refinement-red",
+    "name": "Chromatic Refinement",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN193",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "chromatic-refinement-yellow",
+    "name": "Chromatic Refinement",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN194",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "chromatic-refinement-blue",
+    "name": "Chromatic Refinement",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN195",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "circular-flowtide-yellow",
+    "name": "Circular Flowtide",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "AZS018",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "clear-conscience-red",
+    "name": "Clear Conscience",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN041",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "clear-conscience-yellow",
+    "name": "Clear Conscience",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN042",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "clear-conscience-blue",
+    "name": "Clear Conscience",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "AZS020",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "comet-collision-red",
+    "name": "Comet Collision",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN109",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "comet-collision-yellow",
+    "name": "Comet Collision",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN110",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "comet-collision-blue",
+    "name": "Comet Collision",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN111",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "conflicting-thoughts-red",
+    "name": "Conflicting Thoughts",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN219",
+    "classes": [
+      "Generic"
+    ]
+  },
+  {
+    "cardIdentifier": "conflicting-thoughts-yellow",
+    "name": "Conflicting Thoughts",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN220",
+    "classes": [
+      "Generic"
+    ]
+  },
+  {
+    "cardIdentifier": "conflicting-thoughts-blue",
+    "name": "Conflicting Thoughts",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN221",
+    "classes": [
+      "Generic"
+    ]
+  },
+  {
+    "cardIdentifier": "constella-contemplation-yellow",
+    "name": "Constella Contemplation",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN130",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "constella-flowslide-yellow",
+    "name": "Constella Flowslide",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN131",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "constella-uplift-yellow",
+    "name": "Constella Uplift",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN132",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "core-reaction-red",
+    "name": "Core Reaction",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN103",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "core-reaction-yellow",
+    "name": "Core Reaction",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN104",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "core-reaction-blue",
+    "name": "Core Reaction",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN105",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "corrosive-space-dust-red",
+    "name": "Corrosive Space Dust",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "AZS016",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "corrosive-space-dust-yellow",
+    "name": "Corrosive Space Dust",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN013",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "corrosive-space-dust-blue",
+    "name": "Corrosive Space Dust",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN014",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "cosmic-duality-red",
+    "name": "Cosmic Duality",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN015",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "cosmic-duality-yellow",
+    "name": "Cosmic Duality",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN016",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "cosmic-duality-blue",
+    "name": "Cosmic Duality",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "AZS021",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "cosmic-flare-red",
+    "name": "Cosmic Flare",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN187",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "cosmic-suture-red",
+    "name": "Cosmic Suture",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN127",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "cosmic-suture-yellow",
+    "name": "Cosmic Suture",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN128",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "cosmic-suture-blue",
+    "name": "Cosmic Suture",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN129",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "crackle-from-afar-blue",
+    "name": "Crackle from Afar",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "AZS026",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "dashing-flashfoot-yellow",
+    "name": "Dashing Flashfoot",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN053",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "destructive-fleetfoot-red",
+    "name": "Destructive Fleetfoot",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN062",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "destructive-fleetfoot-yellow",
+    "name": "Destructive Fleetfoot",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN063",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "destructive-fleetfoot-blue",
+    "name": "Destructive Fleetfoot",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN064",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "ebbing-arcstride-red",
+    "name": "Ebbing Arcstride",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "AZS008",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "ebbing-arcstride-yellow",
+    "name": "Ebbing Arcstride",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN019",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "ebbing-arcstride-blue",
+    "name": "Ebbing Arcstride",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "AZS022",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "echoflash-yellow",
+    "name": "Echoflash",
+    "rarity": "Majestic",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN099",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "electrolyze-red",
+    "name": "Electrolyze",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN163",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "electrolyze-yellow",
+    "name": "Electrolyze",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN164",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "electrolyze-blue",
+    "name": "Electrolyze",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN165",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "electryn-joltstep-red",
+    "name": "Electryn Joltstep",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN080",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "electryn-joltstep-yellow",
+    "name": "Electryn Joltstep",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN081",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "electryn-joltstep-blue",
+    "name": "Electryn Joltstep",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN082",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "electryn-mindmeld-yellow",
+    "name": "Electryn Mindmeld",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN054",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "elliptical-conflux-yellow",
+    "name": "Elliptical Conflux",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "AZS019",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "enion-surge-red",
+    "name": "Enion Surge",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN112",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "enion-surge-yellow",
+    "name": "Enion Surge",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN113",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "enion-surge-blue",
+    "name": "Enion Surge",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN114",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "erode-authority-red",
+    "name": "Erode Authority",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN044",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "erode-authority-yellow",
+    "name": "Erode Authority",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN045",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "erode-authority-blue",
+    "name": "Erode Authority",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN046",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "flash-bolt-red",
+    "name": "Flash Bolt",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN106",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "flash-bolt-yellow",
+    "name": "Flash Bolt",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN107",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "flash-bolt-blue",
+    "name": "Flash Bolt",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN108",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "fleeing-starbreeze-blue",
+    "name": "Fleeing Starbreeze",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "AZS027",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "flicker-reality-blue",
+    "name": "Flicker Reality",
+    "rarity": "Majestic",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN005",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "flittering-forcefield-red",
+    "name": "Flittering Forcefield",
+    "rarity": "Common",
+    "types": [
+      "Defense Reaction"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN181",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "flittering-forcefield-yellow",
+    "name": "Flittering Forcefield",
+    "rarity": "Common",
+    "types": [
+      "Defense Reaction"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN182",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "flittering-forcefield-blue",
+    "name": "Flittering Forcefield",
+    "rarity": "Common",
+    "types": [
+      "Defense Reaction"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN183",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "flittering-spike-red",
+    "name": "Flittering Spike",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN166",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "flittering-spike-yellow",
+    "name": "Flittering Spike",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN167",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "flittering-spike-blue",
+    "name": "Flittering Spike",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN168",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "flow-through-blue",
+    "name": "Flow Through",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN158",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "flowing-stormstrike-red",
+    "name": "Flowing Stormstrike",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "AZS009",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "flowshard-elemental-red",
+    "name": "Flowshard Elemental",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN149",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "flowstate-embodiment-red",
+    "name": "Flowstate Embodiment",
+    "rarity": "Majestic",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN146",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "fractal-creation-blue",
+    "name": "Fractal Creation",
+    "rarity": "Majestic",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN040",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "fraying-lifeforce-red",
+    "name": "Fraying Lifeforce",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN007",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "glide-through-starlight-red",
+    "name": "Glide Through Starlight",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN169",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "glide-through-starlight-yellow",
+    "name": "Glide Through Starlight",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN170",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "glide-through-starlight-blue",
+    "name": "Glide Through Starlight",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN171",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "haven-veil-red",
+    "name": "Haven Veil",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN137",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "haven-veil-yellow",
+    "name": "Haven Veil",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN138",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "haven-veil-blue",
+    "name": "Haven Veil",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN139",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "heavens-claws-red",
+    "name": "Heaven's Claws",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN172",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "heavens-claws-yellow",
+    "name": "Heaven's Claws",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN173",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "heavens-claws-blue",
+    "name": "Heaven's Claws",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN174",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "holo-shield-red",
+    "name": "Holo Shield",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN030",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "holo-shield-yellow",
+    "name": "Holo Shield",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN031",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "holo-shield-blue",
+    "name": "Holo Shield",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN032",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "leech-memory-red",
+    "name": "Leech Memory",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN091",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "leech-renown-red",
+    "name": "Leech Renown",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN092",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "leech-vitality-red",
+    "name": "Leech Vitality",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN093",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "lightning-form-red",
+    "name": "Lightning Form",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN150",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "lightning-overload-red",
+    "name": "Lightning Overload",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN115",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "lightning-overload-yellow",
+    "name": "Lightning Overload",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN116",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "lightning-overload-blue",
+    "name": "Lightning Overload",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN117",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "livewire-press-red",
+    "name": "Livewire Press",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN159",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "mercurial-skies-red",
+    "name": "Mercurial Skies",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN059",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "mercurial-skies-yellow",
+    "name": "Mercurial Skies",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN060",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "mercurial-skies-blue",
+    "name": "Mercurial Skies",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN061",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "meteoric-impact-red",
+    "name": "Meteoric Impact",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN118",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "meteoric-impact-yellow",
+    "name": "Meteoric Impact",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN119",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "meteoric-impact-blue",
+    "name": "Meteoric Impact",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN120",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "meteoric-rise-red",
+    "name": "Meteoric Rise",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN153",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "nebula-duality-red",
+    "name": "Nebula Duality",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN121",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "nebula-duality-yellow",
+    "name": "Nebula Duality",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN122",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "nebula-duality-blue",
+    "name": "Nebula Duality",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN123",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "nebulus-cycle-yellow",
+    "name": "Nebulus Cycle",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN035",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "nourishing-glow-blue",
+    "name": "Nourishing Glow",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN038",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "nucleus-aetherbolt-red",
+    "name": "Nucleus Aetherbolt",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN135",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "ominous-aggression-red",
+    "name": "Ominous Aggression",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN216",
+    "classes": [
+      "Generic"
+    ]
+  },
+  {
+    "cardIdentifier": "ominous-excavation-blue",
+    "name": "Ominous Excavation",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN217",
+    "classes": [
+      "Generic"
+    ]
+  },
+  {
+    "cardIdentifier": "ominous-respite-yellow",
+    "name": "Ominous Respite",
+    "rarity": "Rare",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN218",
+    "classes": [
+      "Generic"
+    ]
+  },
+  {
+    "cardIdentifier": "path-of-same-ends-red",
+    "name": "Path of Same Ends",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "SBA016",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "path-of-same-ends-yellow",
+    "name": "Path of Same Ends",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN066",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "path-of-same-ends-blue",
+    "name": "Path of Same Ends",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN067",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "polarus-pulse-ray-red",
+    "name": "Polarus Pulse Ray",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "AZS011",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "polarus-pulse-ray-yellow",
+    "name": "Polarus Pulse Ray",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN010",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "polarus-pulse-ray-blue",
+    "name": "Polarus Pulse Ray",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN011",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "prophetic-quickstep-yellow",
+    "name": "Prophetic Quickstep",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN055",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "pulsing-cardia-red",
+    "name": "Pulsing Cardia",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN021",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "pulsing-cardia-yellow",
+    "name": "Pulsing Cardia",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN022",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "pulsing-cardia-blue",
+    "name": "Pulsing Cardia",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN023",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "quick-succession-red",
+    "name": "Quick Succession",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN083",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "quick-succession-yellow",
+    "name": "Quick Succession",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN084",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "quick-succession-blue",
+    "name": "Quick Succession",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN085",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "rift-breaker-red",
+    "name": "Rift Breaker",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN155",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "rift-breaker-yellow",
+    "name": "Rift Breaker",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN156",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "rift-breaker-blue",
+    "name": "Rift Breaker",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN157",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "rush-of-power-red",
+    "name": "Rush of Power",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "SBA018",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "rush-of-power-yellow",
+    "name": "Rush of Power",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN069",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "rush-of-power-blue",
+    "name": "Rush of Power",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN070",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "scattering-conflux-red",
+    "name": "Scattering Conflux",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "AZS012",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "shattering-flowtide-red",
+    "name": "Shattering Flowtide",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "AZS013",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "shattering-flowtide-yellow",
+    "name": "Shattering Flowtide",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN025",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "shattering-flowtide-blue",
+    "name": "Shattering Flowtide",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "AZS023",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "sigil-of-astral-flow-blue",
+    "name": "Sigil of Astral Flow",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "AZS028",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "sigil-of-lightning-blue",
+    "name": "Sigil of Lightning",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN200",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "singeing-flowstride-red",
+    "name": "Singeing Flowstride",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN071",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "singeing-flowstride-yellow",
+    "name": "Singeing Flowstride",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN072",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "singeing-flowstride-blue",
+    "name": "Singeing Flowstride",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN073",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "spellbane-sigil-blue",
+    "name": "Spellbane Sigil",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN201",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "starlight-road-blue",
+    "name": "Starlight Road",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN189",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "starworld-warning-yellow",
+    "name": "Starworld Warning",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN188",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "static-shelter-yellow",
+    "name": "Static Shelter",
+    "rarity": "Majestic",
+    "types": [
+      "Defense Reaction"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN147",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "stellar-glide-red",
+    "name": "Stellar Glide",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN175",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "stellar-glide-yellow",
+    "name": "Stellar Glide",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN176",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "stellar-glide-blue",
+    "name": "Stellar Glide",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN177",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "step-between-red",
+    "name": "Step Between",
+    "rarity": "Majestic",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN214",
+    "classes": [
+      "Generic"
+    ]
+  },
+  {
+    "cardIdentifier": "stinging-sprite-red",
+    "name": "Stinging Sprite",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN056",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "stinging-sprite-yellow",
+    "name": "Stinging Sprite",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN057",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "stinging-sprite-blue",
+    "name": "Stinging Sprite",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN058",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "stormshard-red",
+    "name": "Stormshard",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN190",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "stormshatter-yellow",
+    "name": "Stormshatter",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN191",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "stormwhirl-blue",
+    "name": "Stormwhirl",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN192",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "stunning-swipe-red",
+    "name": "Stunning Swipe",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN074",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "stunning-swipe-yellow",
+    "name": "Stunning Swipe",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN075",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "stunning-swipe-blue",
+    "name": "Stunning Swipe",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN076",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "tap-lessons-past-red",
+    "name": "Tap Lessons Past",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN124",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "tap-lessons-past-yellow",
+    "name": "Tap Lessons Past",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN125",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "tap-lessons-past-blue",
+    "name": "Tap Lessons Past",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "OMN126",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "tempestuous-kiss-red",
+    "name": "Tempestuous Kiss",
+    "rarity": "Majestic",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN051",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "tempt-over-yellow",
+    "name": "Tempt Over",
+    "rarity": "Majestic",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN215",
+    "classes": [
+      "Generic"
+    ]
+  },
+  {
+    "cardIdentifier": "thunderous-retort-red",
+    "name": "Thunderous Retort",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN196",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "thunderous-retort-yellow",
+    "name": "Thunderous Retort",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN197",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "thunderous-retort-blue",
+    "name": "Thunderous Retort",
+    "rarity": "Common",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "defaultImage": "OMN198",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "tome-of-quandaries-blue",
+    "name": "Tome of Quandaries",
+    "rarity": "Majestic",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "defaultImage": "OMN133",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "turn-to-mindfire-red",
+    "name": "Turn to Mindfire",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Non-Attack"
+    ],
+    "defaultImage": "SBZ017",
+    "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "cardIdentifier": "unwinding-finality-red",
+    "name": "Unwinding Finality",
+    "rarity": "Majestic",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN004",
+    "classes": [
+      "Illusionist"
+    ]
+  },
+  {
+    "cardIdentifier": "visionary-of-orbits-red",
+    "name": "Visionary of Orbits",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN151",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "volatile-fluxor-red",
+    "name": "Volatile Fluxor",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN178",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "volatile-fluxor-yellow",
+    "name": "Volatile Fluxor",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN179",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "volatile-fluxor-blue",
+    "name": "Volatile Fluxor",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN180",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "voltaris-blue",
+    "name": "Voltaris",
+    "rarity": "Fabled",
+    "types": [
+      "Resource"
+    ],
+    "subtypes": [
+      "Gem"
+    ],
+    "defaultImage": "OMN000-CF",
+    "classes": [
+      "NotClassed"
+    ]
+  },
+  {
+    "cardIdentifier": "voltbound-duality-red",
+    "name": "Voltbound Duality",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN077",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "voltbound-duality-yellow",
+    "name": "Voltbound Duality",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN078",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "voltbound-duality-blue",
+    "name": "Voltbound Duality",
+    "rarity": "Common",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN079",
+    "classes": [
+      "Runeblade"
+    ]
+  },
+  {
+    "cardIdentifier": "voltic-impact-red",
+    "name": "Voltic Impact",
+    "rarity": "Rare",
+    "types": [
+      "Action"
+    ],
+    "subtypes": [
+      "Attack"
+    ],
+    "defaultImage": "OMN154",
+    "classes": [
+      "NotClassed"
+    ]
+  }
+]
