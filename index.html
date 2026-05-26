@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OMN Sealed — Flesh & Blood Omens</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0a0c12;
@@ -28,7 +29,7 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'IBM Plex Mono', monospace;
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -52,47 +53,48 @@
 
   header {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 24px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 24px 8px;
     background: linear-gradient(180deg, #0d1020 0%, transparent 100%);
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 100;
     backdrop-filter: blur(12px);
+    gap: 6px;
   }
 
   .logo {
-    font-family: 'Cinzel', serif;
-    font-size: 1.1rem;
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    color: var(--accent);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: #ffffff;
     text-transform: uppercase;
   }
-  .logo span { color: var(--mythic); }
+  .logo span { color: #ffffff; }
 
   .header-stats {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
+  }
+  .header-stats .btn-open {
+    margin-left: auto;
   }
 
   .stat-pill {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 4px 14px;
-    font-size: 0.85rem;
+    font-size: 10px;
     letter-spacing: 0.05em;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
+    color: var(--text-dim);
   }
   .stat-pill .num {
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 11px;
   }
   .stat-pill.deck .num { color: var(--accent); }
   .stat-pill.inv .num { color: var(--accent2); }
@@ -100,18 +102,17 @@
   #deckCount.over { color: #ff4545; }
 
   .btn-open {
-    background: linear-gradient(135deg, var(--accent), #3a6aff);
-    border: none;
+    background: var(--accent);
+    border: 1px solid #7aaaff;
     border-radius: 6px;
     color: #fff;
     cursor: pointer;
-    font-family: 'Cinzel', serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    padding: 8px 18px;
-    text-transform: uppercase;
-    transition: transform 0.15s, opacity 0.15s;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 9px 18px;
+    transition: all 0.15s;
   }
   .btn-open:hover { opacity: 0.9; transform: translateY(-1px); }
   .btn-open:active { transform: translateY(0); }
@@ -122,7 +123,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    height: calc(100vh - 57px);
+    min-height: 0;
   }
 
   .zone-wrap {
@@ -162,9 +163,9 @@
   .zone-header:hover { background: var(--surface2); }
 
   .zone-label {
-    font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.25em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     flex-shrink: 0;
   }
@@ -193,7 +194,7 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 0.75rem;
+    font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.04em;
     opacity: 0.85;
@@ -308,8 +309,8 @@
     justify-content: center;
     min-height: 120px;
     color: var(--text-dim);
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
+    font-size: 10px;
+    letter-spacing: 1px;
     border: 2px dashed var(--border);
     border-radius: 8px;
     text-align: center;
@@ -352,10 +353,10 @@
     border: 1px solid rgba(255,69,69,0.3);
     border-radius: 6px;
     color: #ff8585;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
+    font-size: 10px;
+    letter-spacing: 0.5px;
     margin-bottom: 8px;
-    padding: 6px 12px;
+    padding: 5px 10px;
     display: none;
   }
   .over-limit.show { display: block; }
@@ -374,7 +375,7 @@
     <div class="stat-pill inv">
       Pool: <span class="num" id="invCount">0</span>
     </div>
-    <button class="btn-open" id="openBtn" onclick="openPacks()">⚡ Open 8 Packs</button>
+    <button class="btn-open" id="openBtn" onclick="openPacks()">Open 8 packs</button>
   </div>
 </header>
 
