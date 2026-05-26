@@ -5,7 +5,8 @@ const omensCards = cards.filter((card) =>
     card.printings.some((printing) => printing.identifier.startsWith("OMN")) &&
     !card.printings.some((printing) => printing.isExpansionSlot === true) &&
     !card.types.some((type) => ["Equipment", "Hero"].includes(type)) &&
-    !card.rarities.includes("Basic")
+    !card.rarities.includes("Basic") &&
+    !card.rarities.includes("Legendary")
 );
 
 omensCards.forEach((card) => console.log(card));

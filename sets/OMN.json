@@ -12,7 +12,11 @@
     "defaultImage": "OMN134",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 1,
+    "defense": 2,
+    "functionalText": "Deal 4 arcane damage to any target.\n\nIf this deals damage, you may {t} your hero. If you do, this gets **go again**.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "arc-ramp-red",
@@ -27,7 +31,11 @@
     "defaultImage": "OMN100",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "**Amp 3**\n\nYou may destroy a Lightning Flow you control. If you do, this gets **go again**.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "arc-ramp-yellow",
@@ -42,7 +50,11 @@
     "defaultImage": "OMN101",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "**Amp 2**\n\nYou may destroy a Lightning Flow you control. If you do, this gets **go again**.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "arc-ramp-blue",
@@ -57,7 +69,11 @@
     "defaultImage": "OMN102",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "**Amp 1**\n\nYou may destroy a Lightning Flow you control. If you do, this gets **go again**.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "arcanic-cunning-red",
@@ -72,7 +88,12 @@
     "defaultImage": "OMN088",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "While this is attacking, defending, or on the stack, if you would be dealt arcane damage, prevent 1 of that damage.",
+    "pitch": 1,
+    "power": 4
   },
   {
     "cardIdentifier": "arcanic-cunning-yellow",
@@ -87,7 +108,12 @@
     "defaultImage": "OMN089",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "While this is attacking, defending, or on the stack, if you would be dealt arcane damage, prevent 1 of that damage.",
+    "pitch": 2,
+    "power": 3
   },
   {
     "cardIdentifier": "arcanic-cunning-blue",
@@ -102,7 +128,12 @@
     "defaultImage": "OMN090",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "While this is attacking, defending, or on the stack, if you would be dealt arcane damage, prevent 1 of that damage.",
+    "pitch": 3,
+    "power": 2
   },
   {
     "cardIdentifier": "arcanic-reproach-blue",
@@ -117,7 +148,11 @@
     "defaultImage": "OMN052",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "The first time an opposing hero deals damage to you each turn, you may reveal a Lightning card from your hand. If you do, deal 1 arcane damage to them.\n\nAt the start of your action phase, destroy an aura you control.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "astral-assault-red",
@@ -132,7 +167,12 @@
     "defaultImage": "OMN160",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "defense": 2,
+    "functionalText": "When this attacks, you may destroy a Lightning Flow you control. If you do, this gets +2{p}.",
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "astral-assault-yellow",
@@ -147,7 +187,12 @@
     "defaultImage": "OMN161",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "defense": 2,
+    "functionalText": "When this attacks, you may destroy a Lightning Flow you control. If you do, this gets +2{p}.",
+    "pitch": 2,
+    "power": 4
   },
   {
     "cardIdentifier": "astral-assault-blue",
@@ -162,7 +207,12 @@
     "defaultImage": "OMN162",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "defense": 2,
+    "functionalText": "When this attacks, you may destroy a Lightning Flow you control. If you do, this gets +2{p}.",
+    "pitch": 3,
+    "power": 3
   },
   {
     "cardIdentifier": "astral-bridge-red",
@@ -175,7 +225,10 @@
     "defaultImage": "OMN098",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "Put the top card of your deck into your graveyard. If it's an instant, you may play it this turn.\n\n**Starfall** - If an instant has been put into your graveyard this turn, deal 1 arcane damage to target hero.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "astral-strike-red",
@@ -190,7 +243,12 @@
     "defaultImage": "OMN145",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "When this attacks, if you've destroyed a Lightning Flow this turn, choose 1;\n\n- Draw a card.\n- This gets +2{p}.\n- This gets **go again**.",
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "auric-shards-red",
@@ -205,7 +263,10 @@
     "defaultImage": "AZS015",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "When this enters the arena, up to 1 target attack with fragment gets +1{p}. If this has a holo counter, instead the attack gets +4{p}.\n\n**Ward 1**",
+    "pitch": 1
   },
   {
     "cardIdentifier": "auric-shards-yellow",
@@ -220,7 +281,10 @@
     "defaultImage": "OMN028",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "When this enters the arena, up to 1 target attack with fragment gets +1{p}. If this has a holo counter, instead the attack gets +3{p}.\n\n**Ward 1**",
+    "pitch": 2
   },
   {
     "cardIdentifier": "auric-shards-blue",
@@ -235,7 +299,10 @@
     "defaultImage": "OMN029",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "When this enters the arena, up to 1 target attack with fragment gets +1{p}. If this has a holo counter, instead the attack gets +2{p}.\n\n**Ward 1**",
+    "pitch": 3
   },
   {
     "cardIdentifier": "beckoning-brilliance-red",
@@ -250,7 +317,12 @@
     "defaultImage": "OMN148",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "When this attacks, the next instant card you play this chain link costs {r} less to play.",
+    "pitch": 1,
+    "power": 4
   },
   {
     "cardIdentifier": "blink-of-an-eye-red",
@@ -265,7 +337,12 @@
     "defaultImage": "AZS007",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 2,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, you may banish a Lightning aura permanent you control with no holo counters, then return it to the arena with a holo counter.\n\n**Fragment**",
+    "pitch": 1,
+    "power": 7
   },
   {
     "cardIdentifier": "browbeat-blue",
@@ -280,7 +357,12 @@
     "defaultImage": "OMN213",
     "classes": [
       "Generic"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "This gets +1{p} for each card in your hand.",
+    "pitch": 3,
+    "power": 1
   },
   {
     "cardIdentifier": "brush-off-red",
@@ -293,7 +375,10 @@
     "defaultImage": "OMN222",
     "classes": [
       "Generic"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "The next time you would be dealt 3 or less damage this turn, prevent it.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "brush-off-yellow",
@@ -306,7 +391,10 @@
     "defaultImage": "OMN223",
     "classes": [
       "Generic"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "The next time you would be dealt 2 or less damage this turn, prevent it.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "brush-off-blue",
@@ -319,7 +407,10 @@
     "defaultImage": "OMN224",
     "classes": [
       "Generic"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "The next time you would be dealt 1 damage this turn, prevent it.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "calmveil-of-volthaven-red",
@@ -332,7 +423,10 @@
     "defaultImage": "OMN184",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "Prevent the next 3 damage that would be dealt to you this turn. The first time you prevent damage this way, create a Lightning Flow token.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "calmveil-of-volthaven-yellow",
@@ -345,7 +439,10 @@
     "defaultImage": "OMN185",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "Prevent the next 2 damage that would be dealt to you this turn. The first time you prevent damage this way, create a Lightning Flow token.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "calmveil-of-volthaven-blue",
@@ -358,7 +455,10 @@
     "defaultImage": "OMN186",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "Prevent the next 1 damage that would be dealt to you this turn. The first time you prevent damage this way, create a Lightning Flow token.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "caress-of-the-reaper-red",
@@ -373,7 +473,12 @@
     "defaultImage": "OMN087",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Whenever this deals damage to a hero, destroy target aura they control.",
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "chromatic-refinement-red",
@@ -388,7 +493,10 @@
     "defaultImage": "OMN193",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "At the beginning of your action phase, destroy this, then the next red card you play this turn costs {r} less to play. The first time that card would deal damage this turn, instead it deals that much plus 1.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "chromatic-refinement-yellow",
@@ -403,7 +511,10 @@
     "defaultImage": "OMN194",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "At the beginning of your action phase, destroy this, then the next yellow card you play this turn costs {r} less to play. The first time that card would deal damage this turn, instead it deals that much plus 1.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "chromatic-refinement-blue",
@@ -418,7 +529,10 @@
     "defaultImage": "OMN195",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "At the beginning of your action phase, destroy this, then the next blue card you play this turn costs {r} less to play. The first time that card would deal damage this turn, instead it deals that much plus 1.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "circular-flowtide-yellow",
@@ -433,7 +547,10 @@
     "defaultImage": "AZS018",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "When this leaves the arena, create a Lightning Flow token.\n\n**Ward 2**",
+    "pitch": 2
   },
   {
     "cardIdentifier": "clear-conscience-red",
@@ -448,7 +565,12 @@
     "defaultImage": "OMN041",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 3,
+    "defense": 3,
+    "functionalText": "When this hits a hero, each hero puts a card from their hand on the bottom of their deck and creates a Ponder token.\n\n**Fragment**",
+    "pitch": 1,
+    "power": 8
   },
   {
     "cardIdentifier": "clear-conscience-yellow",
@@ -463,7 +585,12 @@
     "defaultImage": "OMN042",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 3,
+    "defense": 3,
+    "functionalText": "When this hits a hero, each hero puts a card from their hand on the bottom of their deck and creates a Ponder token.\n\n**Fragment**",
+    "pitch": 2,
+    "power": 7
   },
   {
     "cardIdentifier": "clear-conscience-blue",
@@ -478,7 +605,12 @@
     "defaultImage": "AZS020",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 3,
+    "defense": 3,
+    "functionalText": "When this hits a hero, each hero puts a card from their hand on the bottom of their deck and creates a Ponder token.\n\n**Fragment**",
+    "pitch": 3,
+    "power": 6
   },
   {
     "cardIdentifier": "comet-collision-red",
@@ -493,7 +625,11 @@
     "defaultImage": "OMN109",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Deal 3 arcane damage to any target.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, instead deal 4 arcane damage.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "comet-collision-yellow",
@@ -508,7 +644,11 @@
     "defaultImage": "OMN110",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Deal 2 arcane damage to any target.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, instead deal 3 arcane damage.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "comet-collision-blue",
@@ -523,7 +663,11 @@
     "defaultImage": "OMN111",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Deal 1 arcane damage to any target.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, instead deal 2 arcane damage.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "conflicting-thoughts-red",
@@ -538,7 +682,12 @@
     "defaultImage": "OMN219",
     "classes": [
       "Generic"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "When this attacks, **opt 1**.",
+    "pitch": 1,
+    "power": 4
   },
   {
     "cardIdentifier": "conflicting-thoughts-yellow",
@@ -553,7 +702,12 @@
     "defaultImage": "OMN220",
     "classes": [
       "Generic"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "When this attacks, **opt 1**.",
+    "pitch": 2,
+    "power": 3
   },
   {
     "cardIdentifier": "conflicting-thoughts-blue",
@@ -568,7 +722,12 @@
     "defaultImage": "OMN221",
     "classes": [
       "Generic"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "When this attacks, **opt 1**.",
+    "pitch": 3,
+    "power": 2
   },
   {
     "cardIdentifier": "constella-contemplation-yellow",
@@ -581,7 +740,10 @@
     "defaultImage": "OMN130",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "Create a Ponder token.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, deal 1 arcane damage to target hero.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "constella-flowslide-yellow",
@@ -594,7 +756,10 @@
     "defaultImage": "OMN131",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "Create a Lightning Flow token.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, deal 1 arcane damage to target hero.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "constella-uplift-yellow",
@@ -607,7 +772,10 @@
     "defaultImage": "OMN132",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "{u} a staff you control.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, deal 1 arcane damage to target hero.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "core-reaction-red",
@@ -622,7 +790,10 @@
     "defaultImage": "OMN103",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "At the beginning of your action phase, destroy this and deal 4 arcane damage to any target.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "core-reaction-yellow",
@@ -637,7 +808,10 @@
     "defaultImage": "OMN104",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "At the beginning of your action phase, destroy this and deal 3 arcane damage to any target.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "core-reaction-blue",
@@ -652,7 +826,10 @@
     "defaultImage": "OMN105",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "At the beginning of your action phase, destroy this and deal 2 arcane damage to any target.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "corrosive-space-dust-red",
@@ -667,7 +844,10 @@
     "defaultImage": "AZS016",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "When this leaves the arena, deal 1 arcane damage to target hero.\n\n**Ward X**, where X is 4 if this has a holo counter. Otherwise, X is 1.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "corrosive-space-dust-yellow",
@@ -682,7 +862,10 @@
     "defaultImage": "OMN013",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "When this leaves the arena, deal 1 arcane damage to target hero.\n\n**Ward X**, where X is 3 if this has a holo counter. Otherwise, X is 1.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "corrosive-space-dust-blue",
@@ -697,7 +880,10 @@
     "defaultImage": "OMN014",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "When this leaves the arena, deal 1 arcane damage to target hero.\n\n**Ward X**, where X is 2 if this has a holo counter. Otherwise, X is 1.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "cosmic-duality-red",
@@ -712,7 +898,12 @@
     "defaultImage": "OMN015",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 2,
+    "defense": 3,
+    "functionalText": "**Instant** - {r}, discard this: Deal 1 arcane damage to target hero. Create a Lightning Flow token.\n\n**Fragment**",
+    "pitch": 1,
+    "power": 7
   },
   {
     "cardIdentifier": "cosmic-duality-yellow",
@@ -727,7 +918,12 @@
     "defaultImage": "OMN016",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 2,
+    "defense": 3,
+    "functionalText": "**Instant** - {r}, discard this: Deal 1 arcane damage to target hero. Create a Lightning Flow token.\n\n**Fragment**",
+    "pitch": 2,
+    "power": 6
   },
   {
     "cardIdentifier": "cosmic-duality-blue",
@@ -742,7 +938,12 @@
     "defaultImage": "AZS021",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 2,
+    "defense": 3,
+    "functionalText": "**Instant** - {r}, discard this: Deal 1 arcane damage to target hero. Create a Lightning Flow token.\n\n**Fragment**",
+    "pitch": 3,
+    "power": 5
   },
   {
     "cardIdentifier": "cosmic-flare-red",
@@ -755,7 +956,10 @@
     "defaultImage": "OMN187",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "Gain {r}{r}{r}",
+    "pitch": 1
   },
   {
     "cardIdentifier": "cosmic-suture-red",
@@ -768,7 +972,10 @@
     "defaultImage": "OMN127",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "Prevent the next 4 damage that would be dealt to you this turn.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, deal 1 arcane damage to target hero.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "cosmic-suture-yellow",
@@ -781,7 +988,10 @@
     "defaultImage": "OMN128",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "Prevent the next 3 damage that would be dealt to you this turn.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, deal 1 arcane damage to target hero.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "cosmic-suture-blue",
@@ -794,7 +1004,10 @@
     "defaultImage": "OMN129",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "Prevent the next 2 damage that would be dealt to you this turn.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, deal 1 arcane damage to target hero.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "crackle-from-afar-blue",
@@ -809,7 +1022,10 @@
     "defaultImage": "AZS026",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "When this enters the arena, up to 1 target attack gets +1{p}.\n\n**Ward 1**",
+    "pitch": 3
   },
   {
     "cardIdentifier": "dashing-flashfoot-yellow",
@@ -824,7 +1040,12 @@
     "defaultImage": "OMN053",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets +1{p} and \"When this attacks a hero, deal 1 arcane damage to them.\"\n\nThe first time this deals damage to a hero, create an Embodiment of Lightning token.",
+    "pitch": 2,
+    "power": 3
   },
   {
     "cardIdentifier": "destructive-fleetfoot-red",
@@ -839,7 +1060,12 @@
     "defaultImage": "OMN062",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets +1{p}.\n\nWhen this hits a hero, destroy an aura token they control.",
+    "pitch": 1,
+    "power": 3
   },
   {
     "cardIdentifier": "destructive-fleetfoot-yellow",
@@ -854,7 +1080,12 @@
     "defaultImage": "OMN063",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets +1{p}.\n\nWhen this hits a hero, destroy an aura token they control.",
+    "pitch": 2,
+    "power": 2
   },
   {
     "cardIdentifier": "destructive-fleetfoot-blue",
@@ -869,7 +1100,12 @@
     "defaultImage": "OMN064",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets +1{p}.\n\nWhen this hits a hero, destroy an aura token they control.",
+    "pitch": 3,
+    "power": 1
   },
   {
     "cardIdentifier": "ebbing-arcstride-red",
@@ -884,7 +1120,12 @@
     "defaultImage": "AZS008",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, it gets **go again**.\n\n**Fragment**",
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "ebbing-arcstride-yellow",
@@ -899,7 +1140,12 @@
     "defaultImage": "OMN019",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, it gets **go again**.\n\n**Fragment**",
+    "pitch": 2,
+    "power": 5
   },
   {
     "cardIdentifier": "ebbing-arcstride-blue",
@@ -914,7 +1160,12 @@
     "defaultImage": "AZS022",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, it gets **go again**.\n\n**Fragment**",
+    "pitch": 3,
+    "power": 3
   },
   {
     "cardIdentifier": "echoflash-yellow",
@@ -927,7 +1178,10 @@
     "defaultImage": "OMN099",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "Deal 1 arcane damage to target hero.\n\nWhen this is put into your graveyard from anywhere, your hero deals 1 arcane damage to target hero.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "electrolyze-red",
@@ -942,7 +1196,12 @@
     "defaultImage": "OMN163",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 0,
+    "functionalText": "**Go again**",
+    "pitch": 1,
+    "power": 4
   },
   {
     "cardIdentifier": "electrolyze-yellow",
@@ -957,7 +1216,12 @@
     "defaultImage": "OMN164",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 0,
+    "functionalText": "**Go again**",
+    "pitch": 2,
+    "power": 3
   },
   {
     "cardIdentifier": "electrolyze-blue",
@@ -972,7 +1236,12 @@
     "defaultImage": "OMN165",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 0,
+    "functionalText": "**Go again**",
+    "pitch": 3,
+    "power": 2
   },
   {
     "cardIdentifier": "electryn-joltstep-red",
@@ -987,7 +1256,11 @@
     "defaultImage": "OMN080",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Your next Runeblade or Lightning attack this turn gets +3{p}.\n\nCreate a Lightning Flow token.\n\n**Go again**",
+    "pitch": 1
   },
   {
     "cardIdentifier": "electryn-joltstep-yellow",
@@ -1002,7 +1275,11 @@
     "defaultImage": "OMN081",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Your next Runeblade or Lightning attack this turn gets +2{p}.\n\nCreate a Lightning Flow token.\n\n**Go again**",
+    "pitch": 2
   },
   {
     "cardIdentifier": "electryn-joltstep-blue",
@@ -1017,7 +1294,11 @@
     "defaultImage": "OMN082",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Your next Runeblade or Lightning attack this turn gets +1{p}.\n\nCreate a Lightning Flow token.\n\n**Go again**",
+    "pitch": 3
   },
   {
     "cardIdentifier": "electryn-mindmeld-yellow",
@@ -1032,7 +1313,12 @@
     "defaultImage": "OMN054",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets +1{p} and \"When this attacks a hero, deal 1 arcane damage to them.\"\n\nThe first time this deals damage to a hero, you may put an instant card from your graveyard on the bottom of your deck.",
+    "pitch": 2,
+    "power": 3
   },
   {
     "cardIdentifier": "elliptical-conflux-yellow",
@@ -1047,7 +1333,10 @@
     "defaultImage": "AZS019",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "When this leaves the arena, create an Embodiment of Lightning token.\n\n**Ward 2**",
+    "pitch": 2
   },
   {
     "cardIdentifier": "enion-surge-red",
@@ -1062,7 +1351,11 @@
     "defaultImage": "OMN112",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Deal 3 arcane damage to any target.\n\nIf this deals damage, you may {t} your hero. If you do, create a Lightning Flow token.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "enion-surge-yellow",
@@ -1077,7 +1370,11 @@
     "defaultImage": "OMN113",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Deal 2 arcane damage to any target.\n\nIf this deals damage, you may {t} your hero. If you do, create a Lightning Flow token.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "enion-surge-blue",
@@ -1092,7 +1389,11 @@
     "defaultImage": "OMN114",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Deal 1 arcane damage to any target.\n\nIf this deals damage, you may {t} your hero. If you do, create a Lightning Flow token.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "erode-authority-red",
@@ -1107,7 +1408,12 @@
     "defaultImage": "OMN044",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 3,
+    "defense": 3,
+    "functionalText": "**Dominate**\n\n**Fragment**",
+    "pitch": 1,
+    "power": 7
   },
   {
     "cardIdentifier": "erode-authority-yellow",
@@ -1122,7 +1428,12 @@
     "defaultImage": "OMN045",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 3,
+    "defense": 3,
+    "functionalText": "**Dominate**\n\n**Fragment**",
+    "pitch": 2,
+    "power": 6
   },
   {
     "cardIdentifier": "erode-authority-blue",
@@ -1137,7 +1448,12 @@
     "defaultImage": "OMN046",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 3,
+    "defense": 3,
+    "functionalText": "**Dominate**\n\n**Fragment**",
+    "pitch": 3,
+    "power": 5
   },
   {
     "cardIdentifier": "flash-bolt-red",
@@ -1150,7 +1466,10 @@
     "defaultImage": "OMN106",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "Deal 3 arcane damage to target hero.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "flash-bolt-yellow",
@@ -1163,7 +1482,10 @@
     "defaultImage": "OMN107",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "Deal 2 arcane damage to target hero.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "flash-bolt-blue",
@@ -1176,7 +1498,10 @@
     "defaultImage": "OMN108",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "Deal 1 arcane damage to target hero.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "fleeing-starbreeze-blue",
@@ -1191,7 +1516,10 @@
     "defaultImage": "AZS027",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "When this enters the arena, up to 1 target attack gets **go again**.\n\n**Ward 1**",
+    "pitch": 3
   },
   {
     "cardIdentifier": "flicker-reality-blue",
@@ -1206,7 +1534,10 @@
     "defaultImage": "OMN005",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "When this leaves the arena, you may banish another Lightning aura permanent you control with no holo counters, then return it to the arena with a holo counter.\n\n**Ward 1**",
+    "pitch": 3
   },
   {
     "cardIdentifier": "flittering-forcefield-red",
@@ -1219,7 +1550,11 @@
     "defaultImage": "OMN181",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "While this is defending, if you've played an instant card this chain link, this gets +1{d}.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "flittering-forcefield-yellow",
@@ -1232,7 +1567,11 @@
     "defaultImage": "OMN182",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "While this is defending, if you've played an instant card this chain link, this gets +1{d}.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "flittering-forcefield-blue",
@@ -1245,7 +1584,11 @@
     "defaultImage": "OMN183",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "defense": 1,
+    "functionalText": "While this is defending, if you've played an instant card this chain link, this gets +1{d}.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "flittering-spike-red",
@@ -1260,7 +1603,12 @@
     "defaultImage": "OMN166",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "If you've played an instant card this chain link, this gets +2{p}.\n\nWhen this hits, create a Lightning Flow token.",
+    "pitch": 1,
+    "power": 4
   },
   {
     "cardIdentifier": "flittering-spike-yellow",
@@ -1275,7 +1623,12 @@
     "defaultImage": "OMN167",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "If you've played an instant card this chain link, this gets +2{p}.\n\nWhen this hits, create a Lightning Flow token.",
+    "pitch": 2,
+    "power": 3
   },
   {
     "cardIdentifier": "flittering-spike-blue",
@@ -1290,7 +1643,12 @@
     "defaultImage": "OMN168",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "If you've played an instant card this chain link, this gets +2{p}.\n\nWhen this hits, create a Lightning Flow token.",
+    "pitch": 3,
+    "power": 2
   },
   {
     "cardIdentifier": "flow-through-blue",
@@ -1303,7 +1661,10 @@
     "defaultImage": "OMN158",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "Target Lightning attack gets +1{p} and \"When this hits, create a Lightning Flow token.\"",
+    "pitch": 3
   },
   {
     "cardIdentifier": "flowing-stormstrike-red",
@@ -1318,7 +1679,12 @@
     "defaultImage": "AZS009",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "**Twice per Turn Instant** - {r}: This gets +1{p}.\n\nWhen this hits, create a Lightning Flow token.",
+    "pitch": 1,
+    "power": 4
   },
   {
     "cardIdentifier": "flowshard-elemental-red",
@@ -1333,7 +1699,12 @@
     "defaultImage": "OMN149",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "When this attacks, you may discard an instant card. If you do, create a Lightning Flow token and this gets **go again**.",
+    "pitch": 1,
+    "power": 4
   },
   {
     "cardIdentifier": "flowstate-embodiment-red",
@@ -1348,7 +1719,12 @@
     "defaultImage": "OMN146",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Whenever you play an instant card this chain link, create an Embodiment of Lightning or Lightning Flow token.",
+    "pitch": 1,
+    "power": 4
   },
   {
     "cardIdentifier": "fractal-creation-blue",
@@ -1363,7 +1739,12 @@
     "defaultImage": "OMN040",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 3,
+    "defense": 3,
+    "functionalText": "When this hits, you may create a token copy of an aura you control.\n\n**Fragment**",
+    "pitch": 3,
+    "power": 6
   },
   {
     "cardIdentifier": "fraying-lifeforce-red",
@@ -1378,7 +1759,12 @@
     "defaultImage": "OMN007",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 2,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, gain 1{h}.\n\n**Fragment**",
+    "pitch": 1,
+    "power": 7
   },
   {
     "cardIdentifier": "glide-through-starlight-red",
@@ -1393,7 +1779,12 @@
     "defaultImage": "OMN169",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 2,
+    "functionalText": "**Instant** - {r}, discard this: Prevent the next 1 damage that would be dealt to you this turn. If you prevent damage this way, create a Lightning Flow token.",
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "glide-through-starlight-yellow",
@@ -1408,7 +1799,12 @@
     "defaultImage": "OMN170",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 2,
+    "functionalText": "**Instant** - {r}, discard this: Prevent the next 1 damage that would be dealt to you this turn. If you prevent damage this way, create a Lightning Flow token.",
+    "pitch": 2,
+    "power": 4
   },
   {
     "cardIdentifier": "glide-through-starlight-blue",
@@ -1423,7 +1819,12 @@
     "defaultImage": "OMN171",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 2,
+    "functionalText": "**Instant** - {r}, discard this: Prevent the next 1 damage that would be dealt to you this turn. If you prevent damage this way, create a Lightning Flow token.",
+    "pitch": 3,
+    "power": 3
   },
   {
     "cardIdentifier": "haven-veil-red",
@@ -1438,7 +1839,10 @@
     "defaultImage": "OMN137",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "When this enters the arena, prevent the next 3 arcane damage that would be dealt to you this turn.\n\nAt the beginning of your action phase, destroy this.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "haven-veil-yellow",
@@ -1453,7 +1857,10 @@
     "defaultImage": "OMN138",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "When this enters the arena, prevent the next 2 arcane damage that would be dealt to you this turn.\n\nAt the beginning of your action phase, destroy this.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "haven-veil-blue",
@@ -1468,7 +1875,10 @@
     "defaultImage": "OMN139",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "When this enters the arena, prevent the next 1 arcane damage that would be dealt to you this turn.\n\nAt the beginning of your action phase, destroy this.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "heavens-claws-red",
@@ -1483,7 +1893,11 @@
     "defaultImage": "OMN172",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "heavens-claws-yellow",
@@ -1498,7 +1912,11 @@
     "defaultImage": "OMN173",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "pitch": 2,
+    "power": 4
   },
   {
     "cardIdentifier": "heavens-claws-blue",
@@ -1513,7 +1931,11 @@
     "defaultImage": "OMN174",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "pitch": 3,
+    "power": 3
   },
   {
     "cardIdentifier": "holo-shield-red",
@@ -1528,7 +1950,10 @@
     "defaultImage": "OMN030",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "**Ward X**, where X is 4 if this has a holo counter. Otherwise, X is 1.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "holo-shield-yellow",
@@ -1543,7 +1968,10 @@
     "defaultImage": "OMN031",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "**Ward X**, where X is 3 if this has a holo counter. Otherwise, X is 1.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "holo-shield-blue",
@@ -1558,7 +1986,10 @@
     "defaultImage": "OMN032",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "**Ward X**, where X is 2 if this has a holo counter. Otherwise, X is 1.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "leech-memory-red",
@@ -1573,7 +2004,11 @@
     "defaultImage": "OMN091",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "The next attack action card you play this turn gets +3{p} and \"Whenever this deals damage to a hero, you may put an attack action card from your graveyard on the bottom of your deck.\"\n\n**Go again**",
+    "pitch": 1
   },
   {
     "cardIdentifier": "leech-renown-red",
@@ -1588,7 +2023,11 @@
     "defaultImage": "OMN092",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "The next attack action card you play this turn gets +3{p} and \"Whenever this deals damage to a hero, destroy an aura token they control.\"\n\n**Go again**",
+    "pitch": 1
   },
   {
     "cardIdentifier": "leech-vitality-red",
@@ -1603,7 +2042,11 @@
     "defaultImage": "OMN093",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "The next attack action card you play this turn gets +3{p} and \"Whenever this deals damage to a hero, gain 1{h}.\"\n\n**Go again**",
+    "pitch": 1
   },
   {
     "cardIdentifier": "lightning-form-red",
@@ -1618,7 +2061,12 @@
     "defaultImage": "OMN150",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 2,
+    "functionalText": "When this hits, create an Embodiment of Lightning token.",
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "lightning-overload-red",
@@ -1633,7 +2081,11 @@
     "defaultImage": "OMN115",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Deal 4 arcane damage to any target.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, create a Lightning Flow token.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "lightning-overload-yellow",
@@ -1648,7 +2100,11 @@
     "defaultImage": "OMN116",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Deal 3 arcane damage to any target.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, create a Lightning Flow token.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "lightning-overload-blue",
@@ -1663,7 +2119,11 @@
     "defaultImage": "OMN117",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Deal 2 arcane damage to any target.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, create a Lightning Flow token.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "livewire-press-red",
@@ -1676,7 +2136,10 @@
     "defaultImage": "OMN159",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "Target Lightning attack action card gets \"When this hits a hero, deal 4 damage to them.\"",
+    "pitch": 1
   },
   {
     "cardIdentifier": "mercurial-skies-red",
@@ -1691,7 +2154,11 @@
     "defaultImage": "OMN059",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "The next Runeblade or Lightning attack action card you play this turn gets **go again** and \"The first time this deals damage to a hero, you may destroy a Lightning Flow you control. If you do, deal 3 arcane damage to them.\"\n\n**Go again**",
+    "pitch": 1
   },
   {
     "cardIdentifier": "mercurial-skies-yellow",
@@ -1706,7 +2173,11 @@
     "defaultImage": "OMN060",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "The next Runeblade or Lightning attack action card you play this turn gets **go again** and \"The first time this deals damage to a hero, you may destroy a Lightning Flow you control. If you do, deal 2 arcane damage to them.\"\n\n**Go again**",
+    "pitch": 2
   },
   {
     "cardIdentifier": "mercurial-skies-blue",
@@ -1721,7 +2192,11 @@
     "defaultImage": "OMN061",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "The next Runeblade or Lightning attack action card you play this turn gets **go again** and \"The first time this deals damage to a hero, you may destroy a Lightning Flow you control. If you do, deal 1 arcane damage to them.\"\n\n**Go again**",
+    "pitch": 3
   },
   {
     "cardIdentifier": "meteoric-impact-red",
@@ -1736,7 +2211,11 @@
     "defaultImage": "OMN118",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Deal 3 arcane damage to any target.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, instead deal 5 arcane damage.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "meteoric-impact-yellow",
@@ -1751,7 +2230,11 @@
     "defaultImage": "OMN119",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Deal 2 arcane damage to any target.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, instead deal 4 arcane damage.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "meteoric-impact-blue",
@@ -1766,7 +2249,11 @@
     "defaultImage": "OMN120",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Deal 1 arcane damage to any target.\n\n**Starfall** - If an instant card has been put into your graveyard this turn, instead deal 3 arcane damage.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "meteoric-rise-red",
@@ -1781,7 +2268,12 @@
     "defaultImage": "OMN153",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "defense": 2,
+    "functionalText": "**Twice per Turn Instant** - {r}: This gets +1{p}.\n\nWhen this hits, create a Lightning Flow token.",
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "nebula-duality-red",
@@ -1796,7 +2288,11 @@
     "defaultImage": "OMN121",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Deal 3 arcane damage to any target.\n\n**Instant** - {r}, discard this: Deal 1 arcane damage to target hero. Create a Lightning Flow token.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "nebula-duality-yellow",
@@ -1811,7 +2307,11 @@
     "defaultImage": "OMN122",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Deal 2 arcane damage to any target.\n\n**Instant** - {r}, discard this: Deal 1 arcane damage to target hero. Create a Lightning Flow token.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "nebula-duality-blue",
@@ -1826,7 +2326,11 @@
     "defaultImage": "OMN123",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Deal 1 arcane damage to any target.\n\n**Instant** - {r}, discard this: Deal 1 arcane damage to target hero. Create a Lightning Flow token.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "nebulus-cycle-yellow",
@@ -1841,7 +2345,10 @@
     "defaultImage": "OMN035",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "When this leaves the arena, create a Ponder token.\n\n**Ward 2**",
+    "pitch": 2
   },
   {
     "cardIdentifier": "nourishing-glow-blue",
@@ -1856,7 +2363,10 @@
     "defaultImage": "OMN038",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "When this enters the arena, gain 1{h}.\n\n**Ward 1**",
+    "pitch": 3
   },
   {
     "cardIdentifier": "nucleus-aetherbolt-red",
@@ -1871,7 +2381,11 @@
     "defaultImage": "OMN135",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "Deal 3 arcane damage to any target.\n\nIf this deals damage, you may {t} your hero. If you do, your hero deals 1 arcane damage to any target.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "ominous-aggression-red",
@@ -1884,7 +2398,10 @@
     "defaultImage": "OMN216",
     "classes": [
       "Generic"
-    ]
+    ],
+    "cost": 2,
+    "functionalText": "Target attack action card gets +2{p}. If an aura you control was destroyed this turn, instead the card gets +4{p}.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "ominous-excavation-blue",
@@ -1897,7 +2414,10 @@
     "defaultImage": "OMN217",
     "classes": [
       "Generic"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "You may shuffle an instant card from your graveyard into your deck.\n\nIf an aura you control was destroyed this turn, create a Ponder token.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "ominous-respite-yellow",
@@ -1910,7 +2430,10 @@
     "defaultImage": "OMN218",
     "classes": [
       "Generic"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "Gain 2{h}. If an aura you control was destroyed this turn, instead gain 3{h}.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "path-of-same-ends-red",
@@ -1925,7 +2448,12 @@
     "defaultImage": "SBA016",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "When this attacks a hero, deal 1 arcane damage to them. If damage is dealt this way, this gets **go again**.\n\n**Instant** - {r}: This gets **go again**.",
+    "pitch": 1,
+    "power": 3
   },
   {
     "cardIdentifier": "path-of-same-ends-yellow",
@@ -1940,7 +2468,12 @@
     "defaultImage": "OMN066",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "When this attacks a hero, deal 1 arcane damage to them. If damage is dealt this way, this gets **go again**.\n\n**Instant** - {r}: This gets **go again**.",
+    "pitch": 2,
+    "power": 3
   },
   {
     "cardIdentifier": "path-of-same-ends-blue",
@@ -1955,7 +2488,12 @@
     "defaultImage": "OMN067",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "When this attacks a hero, deal 1 arcane damage to them. If damage is dealt this way, this gets **go again**.\n\n**Instant** - {r}: This gets **go again**.",
+    "pitch": 3,
+    "power": 3
   },
   {
     "cardIdentifier": "polarus-pulse-ray-red",
@@ -1970,7 +2508,12 @@
     "defaultImage": "AZS011",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 2,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, deal 1 arcane damage to the defending hero.\n\n**Fragment**",
+    "pitch": 1,
+    "power": 7
   },
   {
     "cardIdentifier": "polarus-pulse-ray-yellow",
@@ -1985,7 +2528,12 @@
     "defaultImage": "OMN010",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 2,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, deal 1 arcane damage to the defending hero.\n\n**Fragment**",
+    "pitch": 2,
+    "power": 6
   },
   {
     "cardIdentifier": "polarus-pulse-ray-blue",
@@ -2000,7 +2548,12 @@
     "defaultImage": "OMN011",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 2,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, deal 1 arcane damage to the defending hero.\n\n**Fragment**",
+    "pitch": 3,
+    "power": 5
   },
   {
     "cardIdentifier": "prophetic-quickstep-yellow",
@@ -2015,7 +2568,12 @@
     "defaultImage": "OMN055",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets +1{p} and \"When this attacks a hero, deal 1 arcane damage to them.\"\n\nThe first time this deals damage to a hero, create a Ponder token.",
+    "pitch": 2,
+    "power": 3
   },
   {
     "cardIdentifier": "pulsing-cardia-red",
@@ -2030,7 +2588,12 @@
     "defaultImage": "OMN021",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, gain {r}.\n\n**Fragment**",
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "pulsing-cardia-yellow",
@@ -2045,7 +2608,12 @@
     "defaultImage": "OMN022",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, gain {r}.\n\n**Fragment**",
+    "pitch": 2,
+    "power": 5
   },
   {
     "cardIdentifier": "pulsing-cardia-blue",
@@ -2060,7 +2628,12 @@
     "defaultImage": "OMN023",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, gain {r}.\n\n**Fragment**",
+    "pitch": 3,
+    "power": 5
   },
   {
     "cardIdentifier": "quick-succession-red",
@@ -2075,7 +2648,11 @@
     "defaultImage": "OMN083",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "The next Runeblade or Lightning attack action card you play this turn gets **go again**.\n\nYour next 3 attacks this turn get +1{p} while they have go again.\n\n**Go again**",
+    "pitch": 1
   },
   {
     "cardIdentifier": "quick-succession-yellow",
@@ -2090,7 +2667,11 @@
     "defaultImage": "OMN084",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "The next Runeblade or Lightning attack action card you play this turn gets **go again**.\n\nYour next 2 attacks this turn get +1{p} while they have go again.\n\n**Go again**",
+    "pitch": 2
   },
   {
     "cardIdentifier": "quick-succession-blue",
@@ -2105,7 +2686,11 @@
     "defaultImage": "OMN085",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "The next Runeblade or Lightning attack action card you play this turn gets **go again**.\n\nYour next attack this turn get +1{p} while it has go again.\n\n**Go again**",
+    "pitch": 3
   },
   {
     "cardIdentifier": "rift-breaker-red",
@@ -2120,7 +2705,12 @@
     "defaultImage": "OMN155",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "defense": 2,
+    "functionalText": "When this hits a hero, destroy a Lightning Flow token they control.",
+    "pitch": 1,
+    "power": 6
   },
   {
     "cardIdentifier": "rift-breaker-yellow",
@@ -2135,7 +2725,12 @@
     "defaultImage": "OMN156",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "defense": 2,
+    "functionalText": "When this hits a hero, destroy a Lightning Flow token they control.",
+    "pitch": 2,
+    "power": 5
   },
   {
     "cardIdentifier": "rift-breaker-blue",
@@ -2150,7 +2745,12 @@
     "defaultImage": "OMN157",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "defense": 2,
+    "functionalText": "When this hits a hero, destroy a Lightning Flow token they control.",
+    "pitch": 3,
+    "power": 4
   },
   {
     "cardIdentifier": "rush-of-power-red",
@@ -2165,7 +2765,12 @@
     "defaultImage": "SBA018",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets +1{p}.\n\nWhen this hits a hero, deal 1 arcane damage to them.",
+    "pitch": 1,
+    "power": 3
   },
   {
     "cardIdentifier": "rush-of-power-yellow",
@@ -2180,7 +2785,12 @@
     "defaultImage": "OMN069",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets +1{p}.\n\nWhen this hits a hero, deal 1 arcane damage to them.",
+    "pitch": 2,
+    "power": 2
   },
   {
     "cardIdentifier": "rush-of-power-blue",
@@ -2195,7 +2805,12 @@
     "defaultImage": "OMN070",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets +1{p}.\n\nWhen this hits a hero, deal 1 arcane damage to them.",
+    "pitch": 3,
+    "power": 1
   },
   {
     "cardIdentifier": "scattering-conflux-red",
@@ -2210,7 +2825,12 @@
     "defaultImage": "AZS012",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 2,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, create an Embodiment of Lightning token.\n\n**Fragment**",
+    "pitch": 1,
+    "power": 7
   },
   {
     "cardIdentifier": "shattering-flowtide-red",
@@ -2225,7 +2845,12 @@
     "defaultImage": "AZS013",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, create a Lightning Flow token.\n\n**Fragment**",
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "shattering-flowtide-yellow",
@@ -2240,7 +2865,12 @@
     "defaultImage": "OMN025",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, create a Lightning Flow token.\n\n**Fragment**",
+    "pitch": 2,
+    "power": 5
   },
   {
     "cardIdentifier": "shattering-flowtide-blue",
@@ -2255,7 +2885,12 @@
     "defaultImage": "AZS023",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "Whenever this fragments, create a Lightning Flow token.\n\n**Fragment**",
+    "pitch": 3,
+    "power": 3
   },
   {
     "cardIdentifier": "sigil-of-astral-flow-blue",
@@ -2270,7 +2905,10 @@
     "defaultImage": "AZS028",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "At the beginning of your action phase, destroy this.\n\nWhen this leaves the arena, create a Lightning Flow token.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "sigil-of-lightning-blue",
@@ -2285,7 +2923,10 @@
     "defaultImage": "OMN200",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "At the beginning of your action phase, destroy this.\n\nWhen this leaves the arena, create an Embodiment of Lightning token.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "singeing-flowstride-red",
@@ -2300,7 +2941,12 @@
     "defaultImage": "OMN071",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets \"When this attacks a hero, deal 1 arcane damage to them.\"\n\nThe first time this deals damage to a hero, create a Lightning Flow token.",
+    "pitch": 1,
+    "power": 4
   },
   {
     "cardIdentifier": "singeing-flowstride-yellow",
@@ -2315,7 +2961,12 @@
     "defaultImage": "OMN072",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets \"When this attacks a hero, deal 1 arcane damage to them.\"\n\nThe first time this deals damage to a hero, create a Lightning Flow token.",
+    "pitch": 2,
+    "power": 3
   },
   {
     "cardIdentifier": "singeing-flowstride-blue",
@@ -2330,7 +2981,12 @@
     "defaultImage": "OMN073",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets \"When this attacks a hero, deal 1 arcane damage to them.\"\n\nThe first time this deals damage to a hero, create a Lightning Flow token.",
+    "pitch": 3,
+    "power": 2
   },
   {
     "cardIdentifier": "spellbane-sigil-blue",
@@ -2345,7 +3001,10 @@
     "defaultImage": "OMN201",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "At the beginning of your action phase, destroy this.\n\n**Arcane Barrier X**",
+    "pitch": 3
   },
   {
     "cardIdentifier": "starlight-road-blue",
@@ -2358,7 +3017,10 @@
     "defaultImage": "OMN189",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "Create an Embodiemtn of Lightning or Lightning Flow token.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "starworld-warning-yellow",
@@ -2371,7 +3033,10 @@
     "defaultImage": "OMN188",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "Create 2 Lightning Flow tokens.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "static-shelter-yellow",
@@ -2384,7 +3049,11 @@
     "defaultImage": "OMN147",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "When this defends, you may pay {r}. If you do, create a Lightning Flow token.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "stellar-glide-red",
@@ -2399,7 +3068,12 @@
     "defaultImage": "OMN175",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "defense": 2,
+    "functionalText": "When this attacks, you may destroy a Lightning Flow you control. If you do, this gets **go again**.",
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "stellar-glide-yellow",
@@ -2414,7 +3088,12 @@
     "defaultImage": "OMN176",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "defense": 2,
+    "functionalText": "When this attacks, you may destroy a Lightning Flow you control. If you do, this gets **go again**.",
+    "pitch": 2,
+    "power": 4
   },
   {
     "cardIdentifier": "stellar-glide-blue",
@@ -2429,7 +3108,12 @@
     "defaultImage": "OMN177",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "defense": 2,
+    "functionalText": "When this attacks, you may destroy a Lightning Flow you control. If you do, this gets **go again**.",
+    "pitch": 3,
+    "power": 3
   },
   {
     "cardIdentifier": "step-between-red",
@@ -2444,7 +3128,12 @@
     "defaultImage": "OMN214",
     "classes": [
       "Generic"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "While this is attacking or on the stack, opponents can't play or activate instants.\n\n**Instant** - {r}, {t} your hero: This gets +1{p} and {p} damage can't be prevented this combat chain.",
+    "pitch": 1,
+    "power": 4
   },
   {
     "cardIdentifier": "stinging-sprite-red",
@@ -2459,7 +3148,12 @@
     "defaultImage": "OMN056",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "When this attacks or defends, deal 1 arcane damage to target hero.",
+    "pitch": 1,
+    "power": 3
   },
   {
     "cardIdentifier": "stinging-sprite-yellow",
@@ -2474,7 +3168,12 @@
     "defaultImage": "OMN057",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "When this attacks or defends, deal 1 arcane damage to target hero.",
+    "pitch": 2,
+    "power": 2
   },
   {
     "cardIdentifier": "stinging-sprite-blue",
@@ -2489,7 +3188,12 @@
     "defaultImage": "OMN058",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "When this attacks or defends, deal 1 arcane damage to target hero.",
+    "pitch": 3,
+    "power": 1
   },
   {
     "cardIdentifier": "stormshard-red",
@@ -2502,7 +3206,10 @@
     "defaultImage": "OMN190",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "You may destroy a Lightning Flow you control rather than pay this card's {r} cost.\n\nTarget Lightning attack gets +3{p}.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "stormshatter-yellow",
@@ -2515,7 +3222,10 @@
     "defaultImage": "OMN191",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "You may destroy a Lightning Flow you control rather than pay this card's {r} cost.\n\nTarget Lightning attack gets -3{p}.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "stormwhirl-blue",
@@ -2528,7 +3238,10 @@
     "defaultImage": "OMN192",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 1,
+    "functionalText": "You may destroy a Lightning Flow you control rather than pay this card's {r} cost.\n\nTarget Lightning attack gets **go again**.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "stunning-swipe-red",
@@ -2543,7 +3256,12 @@
     "defaultImage": "OMN074",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets \"When this attacks a hero, deal 1 arcane damage to them.\"\n\nThe first time this deals damage to a Lightning hero, {t} them or a weapon they control.",
+    "pitch": 1,
+    "power": 3
   },
   {
     "cardIdentifier": "stunning-swipe-yellow",
@@ -2558,7 +3276,12 @@
     "defaultImage": "OMN075",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets \"When this attacks a hero, deal 1 arcane damage to them.\"\n\nThe first time this deals damage to a Lightning hero, {t} them or a weapon they control.",
+    "pitch": 2,
+    "power": 2
   },
   {
     "cardIdentifier": "stunning-swipe-blue",
@@ -2573,7 +3296,12 @@
     "defaultImage": "OMN076",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets \"When this attacks a hero, deal 1 arcane damage to them.\"\n\nThe first time this deals damage to a Lightning hero, {t} them or a weapon they control.",
+    "pitch": 3,
+    "power": 1
   },
   {
     "cardIdentifier": "tap-lessons-past-red",
@@ -2588,7 +3316,11 @@
     "defaultImage": "OMN124",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Deal 4 arcane damage to any target.\n\nIf this deals damage, you may {t} your hero. If you do, put an instant card from your graveyard on the bottom of your deck.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "tap-lessons-past-yellow",
@@ -2603,7 +3335,11 @@
     "defaultImage": "OMN125",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Deal 3 arcane damage to any target.\n\nIf this deals damage, you may {t} your hero. If you do, put an instant card from your graveyard on the bottom of your deck.",
+    "pitch": 2
   },
   {
     "cardIdentifier": "tap-lessons-past-blue",
@@ -2618,7 +3354,11 @@
     "defaultImage": "OMN126",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 1,
+    "defense": 3,
+    "functionalText": "Deal 2 arcane damage to any target.\n\nIf this deals damage, you may {t} your hero. If you do, put an instant card from your graveyard on the bottom of your deck.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "tempestuous-kiss-red",
@@ -2633,7 +3373,12 @@
     "defaultImage": "OMN051",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 2,
+    "defense": 3,
+    "functionalText": "**Quickstrike** - If this has go again, it gets +1{p} and \"When this attacks a hero, deal 1 arcane damage to them.\"\n\nThe first time this deals damage to a hero, they discard a card.",
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "tempt-over-yellow",
@@ -2648,7 +3393,12 @@
     "defaultImage": "OMN215",
     "classes": [
       "Generic"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "When this attacks a hero, **steal** an aura token they control until end of turn.",
+    "pitch": 2,
+    "power": 3
   },
   {
     "cardIdentifier": "thunderous-retort-red",
@@ -2663,7 +3413,10 @@
     "defaultImage": "OMN196",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "At the beginning of your action phase, destroy this, then your next attack this turn gets **go again**.\n\n**Arcane Barrier 3**",
+    "pitch": 1
   },
   {
     "cardIdentifier": "thunderous-retort-yellow",
@@ -2678,7 +3431,10 @@
     "defaultImage": "OMN197",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "At the beginning of your action phase, destroy this, then your next attack this turn gets **go again**.\n\n**Arcane Barrier 2**",
+    "pitch": 2
   },
   {
     "cardIdentifier": "thunderous-retort-blue",
@@ -2693,7 +3449,10 @@
     "defaultImage": "OMN198",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "functionalText": "At the beginning of your action phase, destroy this, then your next attack this turn gets **go again**.\n\n**Arcane Barrier 1**",
+    "pitch": 3
   },
   {
     "cardIdentifier": "tome-of-quandaries-blue",
@@ -2706,7 +3465,11 @@
     "defaultImage": "OMN133",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 0,
+    "defense": 2,
+    "functionalText": "Create 2 Ponder tokens.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "turn-to-mindfire-red",
@@ -2721,7 +3484,11 @@
     "defaultImage": "SBZ017",
     "classes": [
       "Wizard"
-    ]
+    ],
+    "cost": 2,
+    "defense": 2,
+    "functionalText": "Deal 5 arcane damage to any target.\n\nIf this deals damage, you may {t} your hero. If you do, create a Ponder token.",
+    "pitch": 1
   },
   {
     "cardIdentifier": "unwinding-finality-red",
@@ -2736,7 +3503,12 @@
     "defaultImage": "OMN004",
     "classes": [
       "Illusionist"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "When this hits, draw a card.\n\nWhenever this fragments, you may put a Lightning instant card from your graveyard on top of your deck.\n\n**Fragment**",
+    "pitch": 1,
+    "power": 5
   },
   {
     "cardIdentifier": "visionary-of-orbits-red",
@@ -2751,7 +3523,12 @@
     "defaultImage": "OMN151",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 3,
+    "defense": 2,
+    "functionalText": "When this hits, you may put an instant card from your graveyard on the bottom of your deck.",
+    "pitch": 1,
+    "power": 7
   },
   {
     "cardIdentifier": "volatile-fluxor-red",
@@ -2766,7 +3543,12 @@
     "defaultImage": "OMN178",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "If you've played an instant card this chain link, this gets +3{p}.\n\nWhen this hits, create a Lightning Flow token.\n\n**Go again**",
+    "pitch": 1,
+    "power": 0
   },
   {
     "cardIdentifier": "volatile-fluxor-yellow",
@@ -2781,7 +3563,12 @@
     "defaultImage": "OMN179",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "If you've played an instant card this chain link, this gets +2{p}.\n\nWhen this hits, create a Lightning Flow token.\n\n**Go again**",
+    "pitch": 2,
+    "power": 0
   },
   {
     "cardIdentifier": "volatile-fluxor-blue",
@@ -2796,7 +3583,12 @@
     "defaultImage": "OMN180",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "If you've played an instant card this chain link, this gets +1{p}.\n\nWhen this hits, create a Lightning Flow token.\n\n**Go again**",
+    "pitch": 3,
+    "power": 0
   },
   {
     "cardIdentifier": "voltaris-blue",
@@ -2811,7 +3603,9 @@
     "defaultImage": "OMN000-CF",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "functionalText": "**Legendary**\n\nWhen this is pitched, create a Lightning Flow token.",
+    "pitch": 3
   },
   {
     "cardIdentifier": "voltbound-duality-red",
@@ -2826,7 +3620,12 @@
     "defaultImage": "OMN077",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "**Instant** - {r}, discard this: Deal 1 arcane damage to target hero. Create a Lightning Flow token.",
+    "pitch": 1,
+    "power": 4
   },
   {
     "cardIdentifier": "voltbound-duality-yellow",
@@ -2841,7 +3640,12 @@
     "defaultImage": "OMN078",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "**Instant** - {r}, discard this: Deal 1 arcane damage to target hero. Create a Lightning Flow token.",
+    "pitch": 2,
+    "power": 3
   },
   {
     "cardIdentifier": "voltbound-duality-blue",
@@ -2856,7 +3660,12 @@
     "defaultImage": "OMN079",
     "classes": [
       "Runeblade"
-    ]
+    ],
+    "cost": 0,
+    "defense": 3,
+    "functionalText": "**Instant** - {r}, discard this: Deal 1 arcane damage to target hero. Create a Lightning Flow token.",
+    "pitch": 3,
+    "power": 2
   },
   {
     "cardIdentifier": "voltic-impact-red",
@@ -2871,6 +3680,11 @@
     "defaultImage": "OMN154",
     "classes": [
       "NotClassed"
-    ]
+    ],
+    "cost": 2,
+    "defense": 2,
+    "functionalText": "**Twice per Turn Instant** - {r}: This gets +1{p}.\n\nWhen this hits, create a Lightning Flow token.",
+    "pitch": 1,
+    "power": 6
   }
 ]
