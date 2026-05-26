@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OMN Sealed — Flesh & Blood Omens</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c12;
+    --surface: #111420;
+    --surface2: #171b2a;
+    --border: #252a40;
+    --accent: #5b8dff;
+    --accent2: #ff6b35;
+    --mythic: #e03030;
+    --rare: #3a7fff;
+    --common: #e8e8e8;
+    --text: #c8d0e8;
+    --text-dim: #586080;
+    --deck-glow: rgba(91,141,255,0.15);
+    --inv-glow: rgba(255,107,53,0.08);
+    --card-aspect: 88 / 63; /* ~portrait */
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  #app {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    box-shadow: 0 0 60px rgba(0,0,0,0.6);
+  }
+
+  header {
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 24px 8px;
+    background: linear-gradient(180deg, #0d1020 0%, transparent 100%);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    gap: 6px;
+  }
+
+  .logo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  .logo span { color: #ffffff; }
+
+  .header-stats {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .header-stats .btn-open {
+    margin-left: auto;
+  }
+
+  .stat-pill {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-dim);
+  }
+  .stat-pill .num {
+    font-weight: 500;
+    font-size: 11px;
+  }
+  .stat-pill.deck .num { color: var(--accent); }
+  .stat-pill.inv .num { color: var(--accent2); }
+  #deckCount { color: var(--accent); }
+  #deckCount.over { color: #ff4545; }
+
+  .btn-open {
+    background: var(--accent);
+    border: 1px solid #7aaaff;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 9px 18px;
+    transition: all 0.15s;
+  }
+  .btn-open:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-open:active { transform: translateY(0); }
+  .btn-open:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+  /* ZONES */
+  .zones-wrap {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .zone-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .zone-deck-wrap {
+    flex: 0 0 auto;
+  }
+  .zone-inv-wrap {
+    flex: 1;
+    min-height: 0;
+  }
+  .zone-wrap.collapsed { flex: 0 0 auto; }
+
+  .zone-deck-wrap .zone { overflow: visible; }
+  .zone-inv-wrap .zone {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .zone-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    background: var(--surface);
+  }
+  .zone-deck-wrap .zone-header { border-top: none; }
+  .zone-inv-wrap .zone-header { border-top: 2px solid var(--border); }
+
+  .zone-header:hover { background: var(--surface2); }
+
+  .zone-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .zone-deck-wrap .zone-label { color: var(--accent); }
+  .zone-inv-wrap .zone-label { color: var(--accent2); }
+
+  .zone-chevron {
+    margin-left: auto;
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    transition: transform 0.25s ease;
+    opacity: 0.5;
+  }
+  .zone-wrap.collapsed .zone-chevron { transform: rotate(-90deg); }
+
+  /* color pip breakdown */
+  .color-breakdown {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+  }
+  .color-pip {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+  }
+  .color-pip .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .color-pip.red .dot  { background: #e05050; box-shadow: 0 0 4px #e05050aa; }
+  .color-pip.yellow .dot { background: #d4a017; box-shadow: 0 0 4px #d4a017aa; }
+  .color-pip.blue .dot  { background: #4a9edd; box-shadow: 0 0 4px #4a9eddaa; }
+  .color-pip.red   { color: #e07070; }
+  .color-pip.yellow { color: #c8962a; }
+  .color-pip.blue  { color: #6ab4e8; }
+
+  .zone {
+    padding: 12px 16px;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .zone-wrap.collapsed .zone { display: none; }
+
+  .zone-deck {
+    background: radial-gradient(ellipse at top, rgba(91,141,255,0.06) 0%, transparent 70%);
+  }
+
+  .zone-inv {
+    background: radial-gradient(ellipse at bottom, rgba(255,107,53,0.05) 0%, transparent 70%);
+  }
+
+  /* CARD GRID */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 6px;
+  }
+
+  .card-slot {
+    position: relative;
+    aspect-ratio: 63 / 88;
+    border-radius: 5px;
+    overflow: visible;
+    cursor: pointer;
+    transition: transform 0.15s, filter 0.15s;
+  }
+
+  .card-slot:hover {
+    transform: translateY(-4px) scale(1.03);
+    z-index: 10;
+  }
+
+  .card-slot img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    display: block;
+    object-fit: cover;
+    pointer-events: none;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: border-color 0.15s;
+  }
+
+  .card-slot:hover img {
+    border-color: rgba(255,255,255,0.2);
+  }
+
+  /* Rarity ring */
+  .card-slot::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 6px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .card-slot:hover::before { opacity: 1; }
+  .card-slot.mythic::before { box-shadow: 0 0 10px 1px var(--mythic); border: 1px solid var(--mythic); }
+  .card-slot.rare::before { box-shadow: 0 0 8px 1px var(--rare); border: 1px solid var(--rare); }
+  .card-slot.common::before { box-shadow: 0 0 6px 1px rgba(232,232,232,0.4); border: 1px solid var(--common); }
+
+  /* EYE icon — removed, preview is now hover/long-press */
+
+  /* FLOATING CARD PREVIEW */
+  .card-preview {
+    position: fixed;
+    z-index: 500;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    width: 220px;
+    filter: drop-shadow(0 12px 40px rgba(0,0,0,0.9));
+  }
+  .card-preview.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .card-preview img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+  }
+
+  /* EMPTY STATE */
+  .empty-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    color: var(--text-dim);
+    font-size: 10px;
+    letter-spacing: 1px;
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* PACK OPEN ANIMATION */
+  @keyframes packReveal {
+    0% { opacity: 0; transform: translateY(8px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .card-slot.new {
+    animation: packReveal 0.3s ease forwards;
+  }
+
+  /* scrollbar */
+  .zone::-webkit-scrollbar { width: 4px; }
+  .zone::-webkit-scrollbar-track { background: transparent; }
+  .zone::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  /* Rarity dot */
+  .rarity-dot {
+    position: absolute;
+    bottom: 4px;
+    right: 5px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.5);
+    z-index: 5;
+    pointer-events: none;
+  }
+  .rarity-dot.mythic { background: var(--mythic); box-shadow: 0 0 4px var(--mythic); }
+  .rarity-dot.rare { background: var(--rare); box-shadow: 0 0 4px var(--rare); }
+  .rarity-dot.common { background: var(--common); box-shadow: 0 0 3px rgba(232,232,232,0.5); }
+
+  /* Overflow warning */
+  .over-limit {
+    background: rgba(255,69,69,0.1);
+    border: 1px solid rgba(255,69,69,0.3);
+    border-radius: 6px;
+    color: #ff8585;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    display: none;
+  }
+  .over-limit.show { display: block; }
+</style>
+</head>
+<body>
+
+<div id="app">
+
+<header>
+  <div class="logo">Flesh &amp; Blood <span>// Omens</span> — Sealed</div>
+  <div class="header-stats">
+    <div class="stat-pill deck">
+      Deck: <span class="num" id="deckCount">0</span> / 30
+    </div>
+    <div class="stat-pill inv">
+      Pool: <span class="num" id="invCount">0</span>
+    </div>
+    <button class="btn-open" id="openBtn" onclick="openPacks()">Open 8 packs</button>
+  </div>
+</header>
+
+<div class="zones-wrap">
+  <div class="zone-wrap zone-deck-wrap" id="deckWrap">
+    <div class="zone-header" onclick="toggleZone('deck')">
+      <span class="zone-label">Deck</span>
+      <div class="color-breakdown" id="colorBreakdown"></div>
+      <svg class="zone-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="zone zone-deck">
+      <div class="over-limit" id="overLimit">Deck exceeds 30 cards — please remove some cards</div>
+      <div class="card-grid" id="deckGrid">
+        <div class="empty-zone" style="grid-column:1/-1">
+          Click cards from Inventory to add them to your Deck
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="zone-wrap zone-inv-wrap" id="invWrap">
+    <div class="zone-header" onclick="toggleZone('inv')">
+      <span class="zone-label">Inventory</span>
+      <svg class="zone-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="zone zone-inv">
+      <div class="card-grid" id="invGrid">
+        <div class="empty-zone" style="grid-column:1/-1">
+          Open packs to see your card pool
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /#app -->
+
+<!-- Floating card preview -->
+<div class="card-preview" id="cardPreview">
+  <img id="previewImg" src="" alt="">
+</div>
+
+<script>
+// ===================== CARD DATABASE =====================
+const CARDS = {
+  "Unwinding Finality (red)": { num:"OMN004", rarity:"mythic", type:"Lightning, Illusionist, Action, Attack" },
+  "Flicker Reality (blue)": { num:"OMN005", rarity:"mythic", type:"Lightning, Illusionist, Instant, Aura" },
+  "Blink of an Eye (red)": { num:"OMN006", rarity:"rare", type:"Lightning, Illusionist, Action, Attack" },
+  "Fraying Lifeforce (red)": { num:"OMN007", rarity:"rare", type:"Lightning, Illusionist, Action, Attack" },
+  "Scattering Conflux (red)": { num:"OMN008", rarity:"rare", type:"Lightning, Illusionist, Action, Attack" },
+  "Polarus Pulse Ray (red)": { num:"OMN009", rarity:"rare", type:"Lightning, Illusionist, Action, Attack" },
+  "Polarus Pulse Ray (yellow)": { num:"OMN010", rarity:"rare", type:"Lightning, Illusionist, Action, Attack" },
+  "Polarus Pulse Ray (blue)": { num:"OMN011", rarity:"rare", type:"Lightning, Illusionist, Action, Attack" },
+  "Corrosive Space Dust (red)": { num:"OMN012", rarity:"rare", type:"Lightning, Illusionist, Instant, Aura" },
+  "Corrosive Space Dust (yellow)": { num:"OMN013", rarity:"rare", type:"Lightning, Illusionist, Instant, Aura" },
+  "Corrosive Space Dust (blue)": { num:"OMN014", rarity:"rare", type:"Lightning, Illusionist, Instant, Aura" },
+  "Cosmic Duality (red)": { num:"OMN015", rarity:"common", type:"Lightning, Illusionist, Action, Attack" },
+  "Cosmic Duality (yellow)": { num:"OMN016", rarity:"common", type:"Lightning, Illusionist, Action, Attack" },
+  "Cosmic Duality (blue)": { num:"OMN017", rarity:"common", type:"Lightning, Illusionist, Action, Attack" },
+  "Ebbing Arcstride (red)": { num:"OMN018", rarity:"common", type:"Lightning, Illusionist, Action, Attack" },
+  "Ebbing Arcstride (yellow)": { num:"OMN019", rarity:"common", type:"Lightning, Illusionist, Action, Attack" },
+  "Ebbing Arcstride (blue)": { num:"OMN020", rarity:"common", type:"Lightning, Illusionist, Action, Attack" },
+  "Pulsing Cardia (red)": { num:"OMN021", rarity:"common", type:"Lightning, Illusionist, Action, Attack" },
+  "Pulsing Cardia (yellow)": { num:"OMN022", rarity:"common", type:"Lightning, Illusionist, Action, Attack" },
+  "Pulsing Cardia (blue)": { num:"OMN023", rarity:"common", type:"Lightning, Illusionist, Action, Attack" },
+  "Shattering Flowtide (red)": { num:"OMN024", rarity:"common", type:"Lightning, Illusionist, Action, Attack" },
+  "Shattering Flowtide (yellow)": { num:"OMN025", rarity:"common", type:"Lightning, Illusionist, Action, Attack" },
+  "Shattering Flowtide (blue)": { num:"OMN026", rarity:"common", type:"Lightning, Illusionist, Action, Attack" },
+  "Auric Shards (red)": { num:"OMN027", rarity:"common", type:"Lightning, Illusionist, Instant, Aura" },
+  "Auric Shards (yellow)": { num:"OMN028", rarity:"common", type:"Lightning, Illusionist, Instant, Aura" },
+  "Auric Shards (blue)": { num:"OMN029", rarity:"common", type:"Lightning, Illusionist, Instant, Aura" },
+  "Holo Shield (red)": { num:"OMN030", rarity:"common", type:"Lightning, Illusionist, Instant, Aura" },
+  "Holo Shield (yellow)": { num:"OMN031", rarity:"common", type:"Lightning, Illusionist, Instant, Aura" },
+  "Holo Shield (blue)": { num:"OMN032", rarity:"common", type:"Lightning, Illusionist, Instant, Aura" },
+  "Circular Flowtide (yellow)": { num:"OMN033", rarity:"common", type:"Lightning, Illusionist, Instant, Aura" },
+  "Elliptical Conflux (yellow)": { num:"OMN034", rarity:"common", type:"Lightning, Illusionist, Instant, Aura" },
+  "Nebulus Cycle (yellow)": { num:"OMN035", rarity:"common", type:"Lightning, Illusionist, Instant, Aura" },
+  "Crackle from Afar (blue)": { num:"OMN036", rarity:"common", type:"Lightning, Illusionist, Instant, Aura" },
+  "Fleeing Starbreeze (blue)": { num:"OMN037", rarity:"common", type:"Lightning, Illusionist, Instant, Aura" },
+  "Nourishing Glow (blue)": { num:"OMN038", rarity:"common", type:"Lightning, Illusionist, Instant, Aura" },
+  "Fingers of Fragmentation": { num:"OMN039", rarity:"common", type:"Illusionist, Equipment, Arms" },
+  "Fractal Creation (blue)": { num:"OMN040", rarity:"mythic", type:"Illusionist, Action, Attack" },
+  "Clear Conscience (red)": { num:"OMN041", rarity:"rare", type:"Illusionist, Action, Attack" },
+  "Clear Conscience (yellow)": { num:"OMN042", rarity:"rare", type:"Illusionist, Action, Attack" },
+  "Clear Conscience (blue)": { num:"OMN043", rarity:"rare", type:"Illusionist, Action, Attack" },
+  "Erode Authority (red)": { num:"OMN044", rarity:"rare", type:"Illusionist, Action, Attack" },
+  "Erode Authority (yellow)": { num:"OMN045", rarity:"rare", type:"Illusionist, Action, Attack" },
+  "Erode Authority (blue)": { num:"OMN046", rarity:"rare", type:"Illusionist, Action, Attack" },
+  "Snap Fingers": { num:"OMN050", rarity:"common", type:"Lightning, Runeblade, Equipment, Arms" },
+  "Tempestuous Kiss (red)": { num:"OMN051", rarity:"mythic", type:"Lightning, Runeblade, Action, Attack" },
+  "Arcanic Reproach (blue)": { num:"OMN052", rarity:"mythic", type:"Lightning, Runeblade, Instant, Aura" },
+  "Dashing Flashfoot (yellow)": { num:"OMN053", rarity:"rare", type:"Lightning, Runeblade, Action, Attack" },
+  "Electryn Mindmeld (yellow)": { num:"OMN054", rarity:"rare", type:"Lightning, Runeblade, Action, Attack" },
+  "Prophetic Quickstep (yellow)": { num:"OMN055", rarity:"rare", type:"Lightning, Runeblade, Action, Attack" },
+  "Stinging Sprite (red)": { num:"OMN056", rarity:"rare", type:"Lightning, Runeblade, Action, Attack" },
+  "Stinging Sprite (yellow)": { num:"OMN057", rarity:"rare", type:"Lightning, Runeblade, Action, Attack" },
+  "Stinging Sprite (blue)": { num:"OMN058", rarity:"rare", type:"Lightning, Runeblade, Action, Attack" },
+  "Mercurial Skies (red)": { num:"OMN059", rarity:"rare", type:"Lightning, Runeblade, Action" },
+  "Mercurial Skies (yellow)": { num:"OMN060", rarity:"rare", type:"Lightning, Runeblade, Action" },
+  "Mercurial Skies (blue)": { num:"OMN061", rarity:"rare", type:"Lightning, Runeblade, Action" },
+  "Destructive Fleetfoot (red)": { num:"OMN062", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Destructive Fleetfoot (yellow)": { num:"OMN063", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Destructive Fleetfoot (blue)": { num:"OMN064", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Path of Same Ends (red)": { num:"OMN065", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Path of Same Ends (yellow)": { num:"OMN066", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Path of Same Ends (blue)": { num:"OMN067", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Rush of Power (red)": { num:"OMN068", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Rush of Power (yellow)": { num:"OMN069", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Rush of Power (blue)": { num:"OMN070", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Singeing Flowstride (red)": { num:"OMN071", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Singeing Flowstride (yellow)": { num:"OMN072", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Singeing Flowstride (blue)": { num:"OMN073", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Stunning Swipe (red)": { num:"OMN074", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Stunning Swipe (yellow)": { num:"OMN075", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Stunning Swipe (blue)": { num:"OMN076", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Voltbound Duality (red)": { num:"OMN077", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Voltbound Duality (yellow)": { num:"OMN078", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Voltbound Duality (blue)": { num:"OMN079", rarity:"common", type:"Lightning, Runeblade, Action, Attack" },
+  "Electryn Joltstep (red)": { num:"OMN080", rarity:"common", type:"Lightning, Runeblade, Action" },
+  "Electryn Joltstep (yellow)": { num:"OMN081", rarity:"common", type:"Lightning, Runeblade, Action" },
+  "Electryn Joltstep (blue)": { num:"OMN082", rarity:"common", type:"Lightning, Runeblade, Action" },
+  "Quick Succession (red)": { num:"OMN083", rarity:"common", type:"Lightning, Runeblade, Action" },
+  "Quick Succession (yellow)": { num:"OMN084", rarity:"common", type:"Lightning, Runeblade, Action" },
+  "Quick Succession (blue)": { num:"OMN085", rarity:"common", type:"Lightning, Runeblade, Action" },
+  "Caress of the Reaper (red)": { num:"OMN087", rarity:"mythic", type:"Runeblade, Action, Attack" },
+  "Arcanic Cunning (red)": { num:"OMN088", rarity:"rare", type:"Runeblade, Action, Attack" },
+  "Arcanic Cunning (yellow)": { num:"OMN089", rarity:"rare", type:"Runeblade, Action, Attack" },
+  "Arcanic Cunning (blue)": { num:"OMN090", rarity:"rare", type:"Runeblade, Action, Attack" },
+  "Leech Memory (red)": { num:"OMN091", rarity:"rare", type:"Runeblade, Action" },
+  "Leech Renown (red)": { num:"OMN092", rarity:"rare", type:"Runeblade, Action" },
+  "Leech Vitality (red)": { num:"OMN093", rarity:"rare", type:"Runeblade, Action" },
+  "Constella Waves": { num:"OMN097", rarity:"common", type:"Lightning, Wizard, Equipment, Arms" },
+  "Astral Bridge (red)": { num:"OMN098", rarity:"mythic", type:"Lightning, Wizard, Instant" },
+  "Echoflash (yellow)": { num:"OMN099", rarity:"mythic", type:"Lightning, Wizard, Instant" },
+  "Arc Ramp (red)": { num:"OMN100", rarity:"rare", type:"Lightning, Wizard, Action" },
+  "Arc Ramp (yellow)": { num:"OMN101", rarity:"rare", type:"Lightning, Wizard, Action" },
+  "Arc Ramp (blue)": { num:"OMN102", rarity:"rare", type:"Lightning, Wizard, Action" },
+  "Core Reaction (red)": { num:"OMN103", rarity:"rare", type:"Lightning, Wizard, Instant, Aura" },
+  "Core Reaction (yellow)": { num:"OMN104", rarity:"rare", type:"Lightning, Wizard, Instant, Aura" },
+  "Core Reaction (blue)": { num:"OMN105", rarity:"rare", type:"Lightning, Wizard, Instant, Aura" },
+  "Flash Bolt (red)": { num:"OMN106", rarity:"rare", type:"Lightning, Wizard, Instant" },
+  "Flash Bolt (yellow)": { num:"OMN107", rarity:"rare", type:"Lightning, Wizard, Instant" },
+  "Flash Bolt (blue)": { num:"OMN108", rarity:"rare", type:"Lightning, Wizard, Instant" },
+  "Comet Collision (red)": { num:"OMN109", rarity:"rare", type:"Lightning, Wizard, Instant" },
+  "Comet Collision (yellow)": { num:"OMN110", rarity:"rare", type:"Lightning, Wizard, Instant" },
+  "Comet Collision (blue)": { num:"OMN111", rarity:"rare", type:"Lightning, Wizard, Instant" },
+  "Enion Surge (red)": { num:"OMN112", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Enion Surge (yellow)": { num:"OMN113", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Enion Surge (blue)": { num:"OMN114", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Lightning Overload (red)": { num:"OMN115", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Lightning Overload (yellow)": { num:"OMN116", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Lightning Overload (blue)": { num:"OMN117", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Meteoric Impact (red)": { num:"OMN118", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Meteoric Impact (yellow)": { num:"OMN119", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Meteoric Impact (blue)": { num:"OMN120", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Nebula Duality (red)": { num:"OMN121", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Nebula Duality (yellow)": { num:"OMN122", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Nebula Duality (blue)": { num:"OMN123", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Tap Lessons Past (red)": { num:"OMN124", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Tap Lessons Past (yellow)": { num:"OMN125", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Tap Lessons Past (blue)": { num:"OMN126", rarity:"common", type:"Lightning, Wizard, Action" },
+  "Cosmic Suture (red)": { num:"OMN127", rarity:"common", type:"Lightning, Wizard, Instant" },
+  "Cosmic Suture (yellow)": { num:"OMN128", rarity:"common", type:"Lightning, Wizard, Instant" },
+  "Cosmic Suture (blue)": { num:"OMN129", rarity:"common", type:"Lightning, Wizard, Instant" },
+  "Constella Contemplation (yellow)": { num:"OMN130", rarity:"common", type:"Lightning, Wizard, Instant" },
+  "Constella Flowslide (yellow)": { num:"OMN131", rarity:"common", type:"Lightning, Wizard, Instant" },
+  "Constella Uplift (yellow)": { num:"OMN132", rarity:"common", type:"Lightning, Wizard, Instant" },
+  "Tome of Quandaries (blue)": { num:"OMN133", rarity:"mythic", type:"Wizard, Instant" },
+  "Aethersling (red)": { num:"OMN134", rarity:"rare", type:"Wizard, Action" },
+  "Nucleus Aetherbolt (red)": { num:"OMN135", rarity:"rare", type:"Wizard, Action" },
+  "Turn to Mindfire (red)": { num:"OMN136", rarity:"rare", type:"Wizard, Action" },
+  "Haven Veil (red)": { num:"OMN137", rarity:"rare", type:"Wizard, Instant, Aura" },
+  "Haven Veil (yellow)": { num:"OMN138", rarity:"rare", type:"Wizard, Instant, Aura" },
+  "Haven Veil (blue)": { num:"OMN139", rarity:"rare", type:"Wizard, Instant, Aura" },
+  "Constella Tiara": { num:"OMN142", rarity:"common", type:"Lightning, Equipment, Head" },
+  "Starflow Robes": { num:"OMN143", rarity:"common", type:"Lightning, Equipment, Chest" },
+  "Laced Lightning": { num:"OMN144", rarity:"common", type:"Lightning, Equipment, Legs" },
+  "Astral Strike (red)": { num:"OMN145", rarity:"mythic", type:"Lightning, Action, Attack" },
+  "Flowstate Embodiment (red)": { num:"OMN146", rarity:"mythic", type:"Lightning, Action, Attack" },
+  "Static Shelter (yellow)": { num:"OMN147", rarity:"mythic", type:"Lightning, Defense, Reaction" },
+  "Beckoning Brilliance (red)": { num:"OMN148", rarity:"rare", type:"Lightning, Action, Attack" },
+  "Flowshard Elemental (red)": { num:"OMN149", rarity:"rare", type:"Lightning, Action, Attack" },
+  "Lightning Form (red)": { num:"OMN150", rarity:"rare", type:"Lightning, Action, Attack" },
+  "Visionary of Orbits (red)": { num:"OMN151", rarity:"rare", type:"Lightning, Action, Attack" },
+  "Flowing Stormstrike (red)": { num:"OMN152", rarity:"rare", type:"Lightning, Action, Attack" },
+  "Meteoric Rise (red)": { num:"OMN153", rarity:"rare", type:"Lightning, Action, Attack" },
+  "Voltic Impact (red)": { num:"OMN154", rarity:"rare", type:"Lightning, Action, Attack" },
+  "Rift Breaker (red)": { num:"OMN155", rarity:"rare", type:"Lightning, Action, Attack" },
+  "Rift Breaker (yellow)": { num:"OMN156", rarity:"rare", type:"Lightning, Action, Attack" },
+  "Rift Breaker (blue)": { num:"OMN157", rarity:"rare", type:"Lightning, Action, Attack" },
+  "Flow Through (blue)": { num:"OMN158", rarity:"rare", type:"Lightning, Instant" },
+  "Livewire Press (red)": { num:"OMN159", rarity:"rare", type:"Lightning, Instant" },
+  "Astral Assault (red)": { num:"OMN160", rarity:"common", type:"Lightning, Action, Attack" },
+  "Astral Assault (yellow)": { num:"OMN161", rarity:"common", type:"Lightning, Action, Attack" },
+  "Astral Assault (blue)": { num:"OMN162", rarity:"common", type:"Lightning, Action, Attack" },
+  "Electrolyze (red)": { num:"OMN163", rarity:"common", type:"Lightning, Action, Attack" },
+  "Electrolyze (yellow)": { num:"OMN164", rarity:"common", type:"Lightning, Action, Attack" },
+  "Electrolyze (blue)": { num:"OMN165", rarity:"common", type:"Lightning, Action, Attack" },
+  "Flittering Spike (red)": { num:"OMN166", rarity:"common", type:"Lightning, Action, Attack" },
+  "Flittering Spike (yellow)": { num:"OMN167", rarity:"common", type:"Lightning, Action, Attack" },
+  "Flittering Spike (blue)": { num:"OMN168", rarity:"common", type:"Lightning, Action, Attack" },
+  "Glide Through Starlight (red)": { num:"OMN169", rarity:"common", type:"Lightning, Action, Attack" },
+  "Glide Through Starlight (yellow)": { num:"OMN170", rarity:"common", type:"Lightning, Action, Attack" },
+  "Glide Through Starlight (blue)": { num:"OMN171", rarity:"common", type:"Lightning, Action, Attack" },
+  "Heaven's Claws (red)": { num:"OMN172", rarity:"common", type:"Lightning, Action, Attack" },
+  "Heaven's Claws (yellow)": { num:"OMN173", rarity:"common", type:"Lightning, Action, Attack" },
+  "Heaven's Claws (blue)": { num:"OMN174", rarity:"common", type:"Lightning, Action, Attack" },
+  "Stellar Glide (red)": { num:"OMN175", rarity:"common", type:"Lightning, Action, Attack" },
+  "Stellar Glide (yellow)": { num:"OMN176", rarity:"common", type:"Lightning, Action, Attack" },
+  "Stellar Glide (blue)": { num:"OMN177", rarity:"common", type:"Lightning, Action, Attack" },
+  "Volatile Fluxor (red)": { num:"OMN178", rarity:"common", type:"Lightning, Action, Attack" },
+  "Volatile Fluxor (yellow)": { num:"OMN179", rarity:"common", type:"Lightning, Action, Attack" },
+  "Volatile Fluxor (blue)": { num:"OMN180", rarity:"common", type:"Lightning, Action, Attack" },
+  "Flittering Forcefield (red)": { num:"OMN181", rarity:"common", type:"Lightning, Defense, Reaction" },
+  "Flittering Forcefield (yellow)": { num:"OMN182", rarity:"common", type:"Lightning, Defense, Reaction" },
+  "Flittering Forcefield (blue)": { num:"OMN183", rarity:"common", type:"Lightning, Defense, Reaction" },
+  "Calmveil of Volthaven (red)": { num:"OMN184", rarity:"common", type:"Lightning, Instant" },
+  "Calmveil of Volthaven (yellow)": { num:"OMN185", rarity:"common", type:"Lightning, Instant" },
+  "Calmveil of Volthaven (blue)": { num:"OMN186", rarity:"common", type:"Lightning, Instant" },
+  "Cosmic Flare (red)": { num:"OMN187", rarity:"common", type:"Lightning, Instant" },
+  "Starworld Warning (yellow)": { num:"OMN188", rarity:"common", type:"Lightning, Instant" },
+  "Starlight Road (blue)": { num:"OMN189", rarity:"common", type:"Lightning, Instant" },
+  "Stormshard (red)": { num:"OMN190", rarity:"common", type:"Lightning, Instant" },
+  "Stormshatter (yellow)": { num:"OMN191", rarity:"common", type:"Lightning, Instant" },
+  "Stormwhirl (blue)": { num:"OMN192", rarity:"common", type:"Lightning, Instant" },
+  "Chromatic Refinement (red)": { num:"OMN193", rarity:"common", type:"Lightning, Instant, Aura" },
+  "Chromatic Refinement (yellow)": { num:"OMN194", rarity:"common", type:"Lightning, Instant, Aura" },
+  "Chromatic Refinement (blue)": { num:"OMN195", rarity:"common", type:"Lightning, Instant, Aura" },
+  "Thunderous Retort (red)": { num:"OMN196", rarity:"common", type:"Lightning, Instant, Aura" },
+  "Thunderous Retort (yellow)": { num:"OMN197", rarity:"common", type:"Lightning, Instant, Aura" },
+  "Thunderous Retort (blue)": { num:"OMN198", rarity:"common", type:"Lightning, Instant, Aura" },
+  "Sigil of Astral Flow (blue)": { num:"OMN199", rarity:"common", type:"Lightning, Instant, Aura" },
+  "Sigil of Lightning (blue)": { num:"OMN200", rarity:"common", type:"Lightning, Instant, Aura" },
+  "Spellbane Sigil (blue)": { num:"OMN201", rarity:"common", type:"Lightning, Instant, Aura" },
+  "Seeker's Hood": { num:"OMN205", rarity:"common", type:"Generic, Equipment, Head" },
+  "Seeker's Gilet": { num:"OMN206", rarity:"common", type:"Generic, Equipment, Chest" },
+  "Seeker's Mitts": { num:"OMN207", rarity:"common", type:"Generic, Equipment, Arms" },
+  "Seeker's Leggings": { num:"OMN208", rarity:"common", type:"Generic, Equipment, Legs" },
+  "Helm of Astral Sanctuary": { num:"OMN209", rarity:"common", type:"Generic, Equipment, Head" },
+  "Robe of Astral Sanctuary": { num:"OMN210", rarity:"common", type:"Generic, Equipment, Chest" },
+  "Gloves of Astral Sanctuary": { num:"OMN211", rarity:"common", type:"Generic, Equipment, Arms" },
+  "Boots of Astral Sanctuary": { num:"OMN212", rarity:"common", type:"Generic, Equipment, Legs" },
+  "Browbeat (blue)": { num:"OMN213", rarity:"mythic", type:"Generic, Action, Attack" },
+  "Step Between (red)": { num:"OMN214", rarity:"mythic", type:"Generic, Action, Attack" },
+  "Tempt Over (yellow)": { num:"OMN215", rarity:"mythic", type:"Generic, Action, Attack" },
+  "Ominous Aggression (red)": { num:"OMN216", rarity:"rare", type:"Generic, Instant" },
+  "Ominous Excavation (blue)": { num:"OMN217", rarity:"rare", type:"Generic, Instant" },
+  "Ominous Respite (yellow)": { num:"OMN218", rarity:"rare", type:"Generic, Instant" },
+  "Conflicting Thoughts (red)": { num:"OMN219", rarity:"common", type:"Generic, Action, Attack" },
+  "Conflicting Thoughts (yellow)": { num:"OMN220", rarity:"common", type:"Generic, Action, Attack" },
+  "Conflicting Thoughts (blue)": { num:"OMN221", rarity:"common", type:"Generic, Action, Attack" },
+  "Brush Off (red)": { num:"OMN222", rarity:"common", type:"Generic, Instant" },
+  "Brush Off (yellow)": { num:"OMN223", rarity:"common", type:"Generic, Instant" },
+  "Brush Off (blue)": { num:"OMN224", rarity:"common", type:"Generic, Instant" },
+};
+
+function imgUrl(num) {
+  return `https://prod-content.fabrary.io/cards/${num}.webp`;
+}
+
+// ===================== POOL DEFINITIONS =====================
+const POOLS = {
+  LightningIllusionist: [
+    "Cosmic Duality (red)","Cosmic Duality (yellow)","Cosmic Duality (blue)",
+    "Ebbing Arcstride (red)","Ebbing Arcstride (yellow)","Ebbing Arcstride (blue)",
+    "Pulsing Cardia (red)","Pulsing Cardia (yellow)","Pulsing Cardia (blue)",
+    "Shattering Flowtide (red)","Shattering Flowtide (yellow)","Shattering Flowtide (blue)",
+    "Auric Shards (red)","Auric Shards (yellow)","Auric Shards (blue)",
+    "Holo Shield (red)","Holo Shield (yellow)","Holo Shield (blue)",
+    "Circular Flowtide (yellow)","Elliptical Conflux (yellow)","Nebulus Cycle (yellow)",
+    "Crackle from Afar (blue)","Fleeing Starbreeze (blue)","Nourishing Glow (blue)"
+  ],
+  LightningRuneblade: [
+    "Electryn Joltstep (red)","Electryn Joltstep (yellow)","Electryn Joltstep (blue)",
+    "Quick Succession (red)","Quick Succession (yellow)","Quick Succession (blue)",
+    "Destructive Fleetfoot (red)","Destructive Fleetfoot (yellow)","Destructive Fleetfoot (blue)",
+    "Path of Same Ends (red)","Path of Same Ends (yellow)","Path of Same Ends (blue)",
+    "Rush of Power (red)","Rush of Power (yellow)","Rush of Power (blue)",
+    "Singeing Flowstride (red)","Singeing Flowstride (yellow)","Singeing Flowstride (blue)",
+    "Stunning Swipe (red)","Stunning Swipe (yellow)","Stunning Swipe (blue)",
+    "Voltbound Duality (red)","Voltbound Duality (yellow)","Voltbound Duality (blue)"
+  ],
+  LightningWizard: [
+    "Comet Collision (red)","Comet Collision (yellow)","Comet Collision (blue)",
+    "Enion Surge (red)","Enion Surge (yellow)","Enion Surge (blue)",
+    "Lightning Overload (red)","Lightning Overload (yellow)","Lightning Overload (blue)",
+    "Meteoric Impact (red)","Meteoric Impact (yellow)","Meteoric Impact (blue)",
+    "Nebula Duality (red)","Nebula Duality (yellow)","Nebula Duality (blue)",
+    "Tap Lessons Past (red)","Tap Lessons Past (yellow)","Tap Lessons Past (blue)",
+    "Cosmic Suture (red)","Cosmic Suture (yellow)","Cosmic Suture (blue)",
+    "Constella Contemplation (yellow)","Constella Flowslide (yellow)","Constella Uplift (yellow)"
+  ],
+  Lightning: [
+    "Astral Assault (red)","Astral Assault (yellow)","Astral Assault (blue)",
+    "Electrolyze (red)","Electrolyze (yellow)","Electrolyze (blue)",
+    "Flittering Spike (red)","Flittering Spike (yellow)","Flittering Spike (blue)",
+    "Glide Through Starlight (red)","Glide Through Starlight (yellow)","Glide Through Starlight (blue)",
+    "Heaven's Claws (red)","Heaven's Claws (yellow)","Heaven's Claws (blue)",
+    "Stellar Glide (red)","Stellar Glide (yellow)","Stellar Glide (blue)",
+    "Volatile Fluxor (red)","Volatile Fluxor (yellow)","Volatile Fluxor (blue)",
+    "Flittering Forcefield (red)","Flittering Forcefield (yellow)","Flittering Forcefield (blue)",
+    "Calmveil of Volthaven (red)","Calmveil of Volthaven (yellow)","Calmveil of Volthaven (blue)",
+    "Cosmic Flare (red)","Starworld Warning (yellow)","Starlight Road (blue)",
+    "Stormshard (red)","Stormshatter (yellow)","Stormwhirl (blue)",
+    "Chromatic Refinement (red)","Chromatic Refinement (yellow)","Chromatic Refinement (blue)",
+    "Thunderous Retort (red)","Thunderous Retort (yellow)","Thunderous Retort (blue)",
+    "Sigil of Astral Flow (blue)","Sigil of Lightning (blue)","Spellbane Sigil (blue)"
+  ],
+  Generic: [
+    "Conflicting Thoughts (red)","Conflicting Thoughts (yellow)","Conflicting Thoughts (blue)",
+    "Brush Off (red)","Brush Off (yellow)","Brush Off (blue)"
+  ],
+  Equipment: [
+    "Fingers of Fragmentation","Snap Fingers","Constella Waves","Constella Tiara",
+    "Starflow Robes","Laced Lightning","Seeker's Hood","Seeker's Gilet","Seeker's Mitts",
+    "Seeker's Leggings","Helm of Astral Sanctuary","Robe of Astral Sanctuary",
+    "Gloves of Astral Sanctuary","Boots of Astral Sanctuary"
+  ],
+  rare: [
+    "Blink of an Eye (red)","Fraying Lifeforce (red)","Scattering Conflux (red)",
+    "Polarus Pulse Ray (red)","Polarus Pulse Ray (yellow)","Polarus Pulse Ray (blue)",
+    "Corrosive Space Dust (red)","Corrosive Space Dust (yellow)","Corrosive Space Dust (blue)",
+    "Clear Conscience (red)","Clear Conscience (yellow)","Clear Conscience (blue)",
+    "Erode Authority (red)","Erode Authority (yellow)","Erode Authority (blue)",
+    "Dashing Flashfoot (yellow)","Electryn Mindmeld (yellow)","Prophetic Quickstep (yellow)",
+    "Stinging Sprite (red)","Stinging Sprite (yellow)","Stinging Sprite (blue)",
+    "Mercurial Skies (red)","Mercurial Skies (yellow)","Mercurial Skies (blue)",
+    "Arcanic Cunning (red)","Arcanic Cunning (yellow)","Arcanic Cunning (blue)",
+    "Leech Memory (red)","Leech Renown (red)","Leech Vitality (red)",
+    "Arc Ramp (red)","Arc Ramp (yellow)","Arc Ramp (blue)",
+    "Core Reaction (red)","Core Reaction (yellow)","Core Reaction (blue)",
+    "Flash Bolt (red)","Flash Bolt (yellow)","Flash Bolt (blue)",
+    "Aethersling (red)","Nucleus Aetherbolt (red)","Turn to Mindfire (red)",
+    "Haven Veil (red)","Haven Veil (yellow)","Haven Veil (blue)",
+    "Beckoning Brilliance (red)","Flowshard Elemental (red)","Lightning Form (red)",
+    "Visionary of Orbits (red)","Flowing Stormstrike (red)","Meteoric Rise (red)",
+    "Voltic Impact (red)","Rift Breaker (red)","Rift Breaker (yellow)","Rift Breaker (blue)",
+    "Flow Through (blue)","Livewire Press (red)","Ominous Aggression (red)",
+    "Ominous Excavation (blue)","Ominous Respite (yellow)"
+  ],
+  Mythic: [
+    "Unwinding Finality (red)","Flicker Reality (blue)","Fractal Creation (blue)",
+    "Tempestuous Kiss (red)","Arcanic Reproach (blue)","Caress of the Reaper (red)",
+    "Astral Bridge (red)","Echoflash (yellow)","Tome of Quandaries (blue)",
+    "Astral Strike (red)","Flowstate Embodiment (red)","Static Shelter (yellow)",
+    "Browbeat (blue)","Step Between (red)","Tempt Over (yellow)"
+  ],
+  RFCommon: [
+    "Cosmic Duality (red)","Cosmic Duality (yellow)","Cosmic Duality (blue)",
+    "Ebbing Arcstride (red)","Ebbing Arcstride (yellow)","Ebbing Arcstride (blue)",
+    "Pulsing Cardia (red)","Pulsing Cardia (yellow)","Pulsing Cardia (blue)",
+    "Shattering Flowtide (red)","Shattering Flowtide (yellow)","Shattering Flowtide (blue)",
+    "Auric Shards (red)","Auric Shards (yellow)","Auric Shards (blue)",
+    "Holo Shield (red)","Holo Shield (yellow)","Holo Shield (blue)",
+    "Circular Flowtide (yellow)","Elliptical Conflux (yellow)","Nebulus Cycle (yellow)",
+    "Crackle from Afar (blue)","Fleeing Starbreeze (blue)","Nourishing Glow (blue)",
+    "Fingers of Fragmentation","Snap Fingers",
+    "Destructive Fleetfoot (red)","Destructive Fleetfoot (yellow)","Destructive Fleetfoot (blue)",
+    "Path of Same Ends (red)","Path of Same Ends (yellow)","Path of Same Ends (blue)",
+    "Rush of Power (red)","Rush of Power (yellow)","Rush of Power (blue)",
+    "Singeing Flowstride (red)","Singeing Flowstride (yellow)","Singeing Flowstride (blue)",
+    "Stunning Swipe (red)","Stunning Swipe (yellow)","Stunning Swipe (blue)",
+    "Voltbound Duality (red)","Voltbound Duality (yellow)","Voltbound Duality (blue)",
+    "Electryn Joltstep (red)","Electryn Joltstep (yellow)","Electryn Joltstep (blue)",
+    "Quick Succession (red)","Quick Succession (yellow)","Quick Succession (blue)",
+    "Constella Waves","Enion Surge (red)","Enion Surge (yellow)","Enion Surge (blue)",
+    "Lightning Overload (red)","Lightning Overload (yellow)","Lightning Overload (blue)",
+    "Meteoric Impact (red)","Meteoric Impact (yellow)","Meteoric Impact (blue)",
+    "Nebula Duality (red)","Nebula Duality (yellow)","Nebula Duality (blue)",
+    "Tap Lessons Past (red)","Tap Lessons Past (yellow)","Tap Lessons Past (blue)",
+    "Cosmic Suture (red)","Cosmic Suture (yellow)","Cosmic Suture (blue)",
+    "Constella Contemplation (yellow)","Constella Flowslide (yellow)","Constella Uplift (yellow)",
+    "Constella Tiara","Starflow Robes","Laced Lightning",
+    "Astral Assault (red)","Astral Assault (yellow)","Astral Assault (blue)",
+    "Electrolyze (red)","Electrolyze (yellow)","Electrolyze (blue)",
+    "Flittering Spike (red)","Flittering Spike (yellow)","Flittering Spike (blue)",
+    "Glide Through Starlight (red)","Glide Through Starlight (yellow)","Glide Through Starlight (blue)",
+    "Stellar Glide (red)","Stellar Glide (yellow)","Stellar Glide (blue)",
+    "Volatile Fluxor (red)","Volatile Fluxor (yellow)","Volatile Fluxor (blue)",
+    "Flittering Forcefield (red)","Flittering Forcefield (yellow)","Flittering Forcefield (blue)",
+    "Calmveil of Volthaven (red)","Calmveil of Volthaven (yellow)","Calmveil of Volthaven (blue)",
+    "Cosmic Flare (red)","Starworld Warning (yellow)","Starlight Road (blue)",
+    "Stormshard (red)","Stormshatter (yellow)","Stormwhirl (blue)",
+    "Chromatic Refinement (red)","Chromatic Refinement (yellow)","Chromatic Refinement (blue)",
+    "Thunderous Retort (red)","Thunderous Retort (yellow)","Thunderous Retort (blue)",
+    "Sigil of Astral Flow (blue)","Sigil of Lightning (blue)","Spellbane Sigil (blue)",
+    "Helm of Astral Sanctuary","Robe of Astral Sanctuary","Gloves of Astral Sanctuary","Boots of Astral Sanctuary",
+    "Conflicting Thoughts (red)","Conflicting Thoughts (yellow)","Conflicting Thoughts (blue)",
+    "Comet Collision (red)","Comet Collision (yellow)","Comet Collision (blue)"
+  ],
+  RFRare: [
+    "Blink of an Eye (red)","Fraying Lifeforce (red)","Scattering Conflux (red)",
+    "Polarus Pulse Ray (red)","Polarus Pulse Ray (yellow)","Polarus Pulse Ray (blue)",
+    "Corrosive Space Dust (red)","Corrosive Space Dust (yellow)","Corrosive Space Dust (blue)",
+    "Clear Conscience (red)","Clear Conscience (yellow)","Clear Conscience (blue)",
+    "Erode Authority (red)","Erode Authority (yellow)","Erode Authority (blue)",
+    "Dashing Flashfoot (yellow)","Electryn Mindmeld (yellow)","Prophetic Quickstep (yellow)",
+    "Stinging Sprite (red)","Stinging Sprite (yellow)","Stinging Sprite (blue)",
+    "Mercurial Skies (red)","Mercurial Skies (yellow)","Mercurial Skies (blue)",
+    "Arcanic Cunning (red)","Arcanic Cunning (yellow)","Arcanic Cunning (blue)",
+    "Leech Memory (red)","Leech Renown (red)","Leech Vitality (red)",
+    "Arc Ramp (red)","Arc Ramp (yellow)","Arc Ramp (blue)",
+    "Core Reaction (red)","Core Reaction (yellow)","Core Reaction (blue)",
+    "Flash Bolt (red)","Flash Bolt (yellow)","Flash Bolt (blue)",
+    "Aethersling (red)","Nucleus Aetherbolt (red)","Turn to Mindfire (red)",
+    "Haven Veil (red)","Haven Veil (yellow)","Haven Veil (blue)",
+    "Beckoning Brilliance (red)","Flowshard Elemental (red)","Lightning Form (red)",
+    "Visionary of Orbits (red)","Flowing Stormstrike (red)","Meteoric Rise (red)",
+    "Voltic Impact (red)","Rift Breaker (red)","Rift Breaker (yellow)","Rift Breaker (blue)",
+    "Flow Through (blue)","Livewire Press (red)","Ominous Aggression (red)",
+    "Ominous Excavation (blue)","Ominous Respite (yellow)"
+  ],
+  RFMythic: [
+    "Unwinding Finality (red)","Flicker Reality (blue)","Fractal Creation (blue)",
+    "Tempestuous Kiss (red)","Arcanic Reproach (blue)","Caress of the Reaper (red)",
+    "Astral Bridge (red)","Echoflash (yellow)","Tome of Quandaries (blue)",
+    "Astral Strike (red)","Flowstate Embodiment (red)","Static Shelter (yellow)",
+    "Browbeat (blue)","Step Between (red)","Tempt Over (yellow)"
+  ]
+};
+
+// Pack layouts with weights (from the original file's [Layouts] section)
+// Each layout: { weight, slots }
+// Most common base: 2 LI, 1 LR, 3 LW, 3 L, 1 G, 1 E + premium slot(s)
+const PACK_LAYOUTS = [
+  { weight: 1000000, slots: [
+    { pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
+    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
+    {pool:"Generic",count:1},{pool:"Equipment",count:1},
+    {pool:"rare",count:2},{pool:"RFCommon",count:1}
+  ]},
+  { weight: 175000, slots: [
+    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
+    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
+    {pool:"Generic",count:1},{pool:"Equipment",count:1},
+    {pool:"rare",count:2},{pool:"RFRare",count:1}
+  ]},
+  { weight: 35000, slots: [
+    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
+    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
+    {pool:"Generic",count:1},{pool:"Equipment",count:1},
+    {pool:"rare",count:2},{pool:"RFMythic",count:1}
+  ]},
+  { weight: 250000, slots: [
+    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
+    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
+    {pool:"Generic",count:1},{pool:"Equipment",count:1},
+    {pool:"rare",count:1},{pool:"Mythic",count:1},{pool:"RFCommon",count:1}
+  ]},
+  { weight: 43750, slots: [
+    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
+    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
+    {pool:"Generic",count:1},{pool:"Equipment",count:1},
+    {pool:"rare",count:1},{pool:"Mythic",count:1},{pool:"RFRare",count:1}
+  ]},
+  { weight: 8750, slots: [
+    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
+    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
+    {pool:"Generic",count:1},{pool:"Equipment",count:1},
+    {pool:"rare",count:1},{pool:"Mythic",count:1},{pool:"RFMythic",count:1}
+  ]},
+  { weight: 40000, slots: [
+    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
+    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
+    {pool:"Generic",count:1},{pool:"Equipment",count:1},
+    {pool:"Mythic",count:2},{pool:"RFCommon",count:1}
+  ]},
+  { weight: 7000, slots: [
+    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
+    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
+    {pool:"Generic",count:1},{pool:"Equipment",count:1},
+    {pool:"Mythic",count:2},{pool:"RFRare",count:1}
+  ]},
+  { weight: 1400, slots: [
+    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
+    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
+    {pool:"Generic",count:1},{pool:"Equipment",count:1},
+    {pool:"Mythic",count:2},{pool:"RFMythic",count:1}
+  ]},
+];
+
+const TOTAL_WEIGHT = PACK_LAYOUTS.reduce((s, l) => s + l.weight, 0);
+
+function pickLayout() {
+  let r = Math.random() * TOTAL_WEIGHT;
+  for (const layout of PACK_LAYOUTS) {
+    r -= layout.weight;
+    if (r <= 0) return layout;
+  }
+  return PACK_LAYOUTS[0];
+}
+
+function rnd(pool) {
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+function openOnePack() {
+  const layout = pickLayout();
+  const cards = [];
+  for (const slot of layout.slots) {
+    for (let i = 0; i < slot.count; i++) {
+      cards.push(rnd(POOLS[slot.pool]));
+    }
+  }
+  return cards;
+}
+
+// ===================== SORTING =====================
+const CATEGORY_ORDER = [
+  "Equipment", "Generic", "Lightning", "LightningRuneblade", "Runeblade",
+  "LightningWizard", "Wizard", "LightningIllusionist", "Illusionist"
+];
+const COLOR_ORDER = { red: 0, yellow: 1, blue: 2, none: 3 };
+
+function getCategory(name) {
+  const data = CARDS[name];
+  if (!data) return "Generic";
+  const t = data.type;
+  if (t.includes("Equipment")) return "Equipment";
+  if (t.includes("Illusionist") && t.includes("Lightning")) return "LightningIllusionist";
+  if (t.includes("Illusionist")) return "Illusionist";
+  if (t.includes("Runeblade") && t.includes("Lightning")) return "LightningRuneblade";
+  if (t.includes("Runeblade")) return "Runeblade";
+  if (t.includes("Wizard") && t.includes("Lightning")) return "LightningWizard";
+  if (t.includes("Wizard")) return "Wizard";
+  if (t.includes("Lightning")) return "Lightning";
+  return "Generic";
+}
+
+function getColor(name) {
+  const m = name.match(/\((red|yellow|blue)\)$/i);
+  return m ? m[1].toLowerCase() : "none";
+}
+
+function sortCards(cards) {
+  return [...cards].sort((a, b) => {
+    const catA = CATEGORY_ORDER.indexOf(getCategory(a.name));
+    const catB = CATEGORY_ORDER.indexOf(getCategory(b.name));
+    if (catA !== catB) return catA - catB;
+    const colA = COLOR_ORDER[getColor(a.name)] ?? 3;
+    const colB = COLOR_ORDER[getColor(b.name)] ?? 3;
+    if (colA !== colB) return colA - colB;
+    return a.name.localeCompare(b.name);
+  });
+}
+
+// ===================== STATE =====================
+let inventory = []; // array of {name, uid}
+let deck = [];      // array of {name, uid}
+let uidCounter = 0;
+
+function uid() { return ++uidCounter; }
+
+// ===================== COLLAPSE =====================
+const collapseState = { deck: false, inv: false };
+
+function toggleZone(zone) {
+  collapseState[zone] = !collapseState[zone];
+  document.getElementById(zone === 'deck' ? 'deckWrap' : 'invWrap')
+    .classList.toggle('collapsed', collapseState[zone]);
+}
+
+// ===================== RENDER =====================
+function colorBreakdownHTML(cards) {
+  const counts = { red: 0, yellow: 0, blue: 0 };
+  for (const c of cards) {
+    const col = getColor(c.name);
+    if (col in counts) counts[col]++;
+  }
+  const total = counts.red + counts.yellow + counts.blue;
+  if (total === 0) return '';
+  return ['red','yellow','blue'].map(col =>
+    counts[col] > 0
+      ? `<span class="color-pip ${col}"><span class="dot"></span>${counts[col]}</span>`
+      : ''
+  ).join('');
+}
+
+function cardHTML(card, zone) {
+  const data = CARDS[card.name];
+  if (!data) return '';
+  const img = imgUrl(data.num);
+  const r = data.rarity;
+  return `
+    <div class="card-slot ${r}" data-uid="${card.uid}" data-zone="${zone}" data-name="${card.name.replace(/'/g,"&#39;")}"
+         onclick="handleCardClick(event,${card.uid},'${zone}')">
+      <img src="${img}" alt="${card.name}" loading="lazy"
+           onerror="this.src='https://d2h5owxb2ypf43.cloudfront.net/cards/cardback.webp'">
+      <div class="rarity-dot ${r}"></div>
+    </div>`;
+}
+
+function render() {
+  const deckGrid = document.getElementById('deckGrid');
+  const invGrid = document.getElementById('invGrid');
+  const deckCount = document.getElementById('deckCount');
+  const invCount = document.getElementById('invCount');
+  const overLimit = document.getElementById('overLimit');
+  const colorBreakdown = document.getElementById('colorBreakdown');
+
+  if (deck.length === 0) {
+    deckGrid.innerHTML = '<div class="empty-zone" style="grid-column:1/-1">Click cards from Inventory to add them to your Deck</div>';
+  } else {
+    deckGrid.innerHTML = sortCards(deck).map(c => cardHTML(c, 'deck')).join('');
+  }
+
+  if (inventory.length === 0 && deck.length === 0) {
+    invGrid.innerHTML = '<div class="empty-zone" style="grid-column:1/-1">Open packs to see your card pool</div>';
+  } else {
+    invGrid.innerHTML = sortCards(inventory).map(c => cardHTML(c, 'inv')).join('');
+  }
+
+  deckCount.textContent = deck.length;
+  deckCount.classList.toggle('over', deck.length > 30);
+  overLimit.classList.toggle('show', deck.length > 30);
+  invCount.textContent = inventory.length;
+  colorBreakdown.innerHTML = colorBreakdownHTML(deck);
+}
+
+// ===================== ACTIONS =====================
+function moveCard(cardUid, fromZone) {
+  if (fromZone === 'inv') {
+    const idx = inventory.findIndex(c => c.uid === cardUid);
+    if (idx === -1) return;
+    const card = inventory.splice(idx, 1)[0];
+    deck.push(card);
+  } else {
+    const idx = deck.findIndex(c => c.uid === cardUid);
+    if (idx === -1) return;
+    const card = deck.splice(idx, 1)[0];
+    inventory.push(card);
+  }
+  render();
+}
+
+function openPacks() {
+  document.getElementById('openBtn').disabled = true;
+  const allCards = [];
+  for (let i = 0; i < 8; i++) {
+    const pack = openOnePack();
+    pack.forEach(name => allCards.push({ name, uid: uid() }));
+  }
+  inventory = allCards;
+  deck = [];
+  render();
+  // animate
+  setTimeout(() => {
+    document.querySelectorAll('.card-slot').forEach((el, i) => {
+      el.style.animationDelay = `${i * 18}ms`;
+      el.classList.add('new');
+    });
+  }, 10);
+}
+
+// ===================== PREVIEW =====================
+const preview = document.getElementById('cardPreview');
+const previewImg = document.getElementById('previewImg');
+const PREVIEW_W = 220;
+const PREVIEW_H = 308;
+const DELAY = 500;
+
+let hoverTimer = null;
+let pressTimer = null;
+let pressTriggered = false; // true = preview shown, suppress move on release
+
+function showPreview(name, anchorEl) {
+  const data = CARDS[name];
+  if (!data) return;
+  previewImg.src = imgUrl(data.num);
+  previewImg.onerror = () => { previewImg.src = 'https://d2h5owxb2ypf43.cloudfront.net/cards/cardback.webp'; };
+
+  const rect = anchorEl.getBoundingClientRect();
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  let left = rect.right + 10;
+  if (left + PREVIEW_W > vw - 8) left = rect.left - PREVIEW_W - 10;
+  let top = rect.top + (rect.height / 2) - (PREVIEW_H / 2);
+  top = Math.max(8, Math.min(top, vh - PREVIEW_H - 8));
+
+  preview.style.left = left + 'px';
+  preview.style.top  = top  + 'px';
+  preview.classList.add('visible');
+}
+
+function hidePreview() {
+  preview.classList.remove('visible');
+}
+
+// ---- MOUSE: show after 0.5s hover, hide on leave ----
+document.addEventListener('mouseover', e => {
+  const slot = e.target.closest('.card-slot');
+  if (!slot) return;
+  clearTimeout(hoverTimer);
+  hoverTimer = setTimeout(() => showPreview(slot.dataset.name, slot), DELAY);
+});
+
+document.addEventListener('mouseout', e => {
+  const slot = e.target.closest('.card-slot');
+  if (!slot) return;
+  if (slot.contains(e.relatedTarget)) return;
+  clearTimeout(hoverTimer);
+  hidePreview();
+});
+
+// ---- MOUSE CLICK: only fires if mouse was held < 0.5s (preview not shown) ----
+function handleCardClick(e, cardUid, zone) {
+  // If preview is currently visible the user held long enough — don't move
+  if (preview.classList.contains('visible')) return;
+  moveCard(cardUid, zone);
+}
+
+// ---- TOUCH: hold 0.5s → show preview until finger lifts; quick tap → move ----
+document.addEventListener('touchstart', e => {
+  const slot = e.target.closest('.card-slot');
+  if (!slot) return;
+  pressTriggered = false;
+  pressTimer = setTimeout(() => {
+    pressTriggered = true;
+    showPreview(slot.dataset.name, slot);
+  }, DELAY);
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+  clearTimeout(pressTimer);
+  if (pressTriggered) {
+    pressTriggered = false;
+    hidePreview();
+    e.preventDefault(); // suppress the synthetic click → no moveCard
+  }
+  // if not triggered, the synthetic click fires → handleCardClick → moveCard
+}, { passive: false });
+
+document.addEventListener('touchmove', () => {
+  clearTimeout(pressTimer);
+}, { passive: true });
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { clearTimeout(hoverTimer); hidePreview(); }
+});
+</script>
+</body>
+</html>
