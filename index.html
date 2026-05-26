@@ -975,10 +975,12 @@ function openPacks() {
 const preview = document.getElementById('cardPreview');
 const previewImg = document.getElementById('previewImg');
 const PREVIEW_W = 220;
-const PREVIEW_H = 308; // approx card height at 220px wide
-let hideTimer = null;
-let longPressTimer = null;
-let longPressTriggered = false;
+const PREVIEW_H = 308;
+const DELAY = 500;
+
+let hoverTimer = null;
+let pressTimer = null;
+let pressTriggered = false; // true = preview shown, suppress move on release
 
 function showPreview(name, anchorEl) {
   const data = CARDS[name];
@@ -990,10 +992,8 @@ function showPreview(name, anchorEl) {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
 
-  // Prefer showing to the right; fall back to left
   let left = rect.right + 10;
   if (left + PREVIEW_W > vw - 8) left = rect.left - PREVIEW_W - 10;
-  // Vertical: center on card, clamp to viewport
   let top = rect.top + (rect.height / 2) - (PREVIEW_H / 2);
   top = Math.max(8, Math.min(top, vh - PREVIEW_H - 8));
 
@@ -1006,54 +1006,56 @@ function hidePreview() {
   preview.classList.remove('visible');
 }
 
-// Delegate events on document — works for dynamically rendered cards
+// ---- MOUSE: show after 0.5s hover, hide on leave ----
 document.addEventListener('mouseover', e => {
   const slot = e.target.closest('.card-slot');
   if (!slot) return;
-  if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
-  showPreview(slot.dataset.name, slot);
+  clearTimeout(hoverTimer);
+  hoverTimer = setTimeout(() => showPreview(slot.dataset.name, slot), DELAY);
 });
 
 document.addEventListener('mouseout', e => {
   const slot = e.target.closest('.card-slot');
   if (!slot) return;
-  // Only hide if we're leaving the slot entirely (not moving to a child)
   if (slot.contains(e.relatedTarget)) return;
-  hideTimer = setTimeout(hidePreview, 80);
+  clearTimeout(hoverTimer);
+  hidePreview();
 });
 
-// Long-press for mobile
-document.addEventListener('touchstart', e => {
-  const slot = e.target.closest('.card-slot');
-  if (!slot) return;
-  longPressTriggered = false;
-  longPressTimer = setTimeout(() => {
-    longPressTriggered = true;
-    showPreview(slot.dataset.name, slot);
-  }, 500);
-}, { passive: true });
-
-document.addEventListener('touchend', e => {
-  clearTimeout(longPressTimer);
-  if (longPressTriggered) {
-    longPressTriggered = false;
-    hidePreview();
-    e.preventDefault(); // block the click that would move the card
-  }
-}, { passive: false });
-
-document.addEventListener('touchmove', () => {
-  clearTimeout(longPressTimer);
-}, { passive: true });
-
-// Click handler — skip move if long press just fired
+// ---- MOUSE CLICK: only fires if mouse was held < 0.5s (preview not shown) ----
 function handleCardClick(e, cardUid, zone) {
-  if (longPressTriggered) return;
+  // If preview is currently visible the user held long enough — don't move
+  if (preview.classList.contains('visible')) return;
   moveCard(cardUid, zone);
 }
 
+// ---- TOUCH: hold 0.5s → show preview until finger lifts; quick tap → move ----
+document.addEventListener('touchstart', e => {
+  const slot = e.target.closest('.card-slot');
+  if (!slot) return;
+  pressTriggered = false;
+  pressTimer = setTimeout(() => {
+    pressTriggered = true;
+    showPreview(slot.dataset.name, slot);
+  }, DELAY);
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+  clearTimeout(pressTimer);
+  if (pressTriggered) {
+    pressTriggered = false;
+    hidePreview();
+    e.preventDefault(); // suppress the synthetic click → no moveCard
+  }
+  // if not triggered, the synthetic click fires → handleCardClick → moveCard
+}, { passive: false });
+
+document.addEventListener('touchmove', () => {
+  clearTimeout(pressTimer);
+}, { passive: true });
+
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') hidePreview();
+  if (e.key === 'Escape') { clearTimeout(hoverTimer); hidePreview(); }
 });
 </script>
 </body>
