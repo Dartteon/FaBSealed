@@ -283,7 +283,9 @@
   .card-slot.rare::before { box-shadow: 0 0 8px 1px var(--rare); border: 1px solid var(--rare); }
   .card-slot.common::before { box-shadow: 0 0 6px 1px rgba(232,232,232,0.4); border: 1px solid var(--common); }
 
-  /* EYE icon — removed */
+  .card-slot img, .rarity-dot {
+    pointer-events: none;
+  }
 
   /* EMPTY STATE */
   .empty-zone {
@@ -938,8 +940,7 @@ function cardHTML(card, zone) {
   const img = imgUrl(data.num);
   const r = data.rarity;
   return `
-    <div class="card-slot ${r}" data-uid="${card.uid}" data-zone="${zone}" data-name="${card.name.replace(/'/g,"&#39;")}"
-         onclick="handleCardClick(event,${card.uid},'${zone}')">
+    <div class="card-slot ${r}" data-uid="${card.uid}" data-zone="${zone}" data-name="${card.name.replace(/'/g,"&#39;")}">
       <img src="${img}" alt="${card.name}" loading="lazy"
            onerror="this.src='https://d2h5owxb2ypf43.cloudfront.net/cards/cardback.webp'">
       <div class="rarity-dot ${r}"></div>
@@ -1008,83 +1009,31 @@ function openPacks() {
   }, 10);
 }
 
-// ===================== PREVIEW =====================
-const preview = document.getElementById('cardPreview');
-const previewImg = document.getElementById('previewImg');
-const PREVIEW_W = 220;
-const PREVIEW_H = 308;
-const DELAY = 500;
-
-let hoverTimer = null;
-let pressTimer = null;
-let pressTriggered = false; // true = preview shown, suppress move on release
-
-function showPreview(name, anchorEl) {
-  const data = CARDS[name];
-  if (!data) return;
-  previewImg.src = imgUrl(data.num);
-  previewImg.onerror = () => { previewImg.src = 'https://d2h5owxb2ypf43.cloudfront.net/cards/cardback.webp'; };
-
-  const rect = anchorEl.getBoundingClientRect();
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
-
-  let left = rect.right + 10;
-  if (left + PREVIEW_W > vw - 8) left = rect.left - PREVIEW_W - 10;
-  let top = rect.top + (rect.height / 2) - (PREVIEW_H / 2);
-  top = Math.max(8, Math.min(top, vh - PREVIEW_H - 8));
-
-  preview.style.left = left + 'px';
-  preview.style.top  = top  + 'px';
-  preview.classList.add('visible');
-}
-
-function hidePreview() {
-  preview.classList.remove('visible');
-}
-
-preview.addEventListener('click', () => {
-  clearTimeout(hoverTimer);
-  hidePreview();
-});
-
-// ---- MOUSE: show after 0.5s hover, hide on leave ----
-document.addEventListener('mouseover', e => {
-  const slot = e.target.closest('.card-slot');
+// ===================== CARD INTERACTION =====================
+// Use both click (desktop) and touchend (mobile) delegated from document
+function handleSlot(el) {
+  const slot = el.closest('.card-slot');
   if (!slot) return;
-  clearTimeout(hoverTimer);
-  hoverTimer = setTimeout(() => showPreview(slot.dataset.name, slot), DELAY);
-});
-
-document.addEventListener('mouseout', e => {
-  const slot = e.target.closest('.card-slot');
-  if (!slot) return;
-  if (slot.contains(e.relatedTarget)) return;
-  clearTimeout(hoverTimer);
-  hidePreview();
-});
-
-// ---- MOUSE CLICK: only fires if mouse was held < 0.5s (preview not shown) ----
-function handleCardClick(e, cardUid, zone) {
-  // If preview is currently visible the user held long enough — don't move
-  if (preview.classList.contains('visible')) return;
-  moveCard(cardUid, zone);
+  const uid = parseInt(slot.dataset.uid);
+  const zone = slot.dataset.zone;
+  moveCard(uid, zone);
 }
 
-// ---- TOUCH: always move on tap, no preview ----
+document.addEventListener('click', e => {
+  handleSlot(e.target);
+});
+
+// touchend for reliable mobile taps (fires before synthetic click)
+let touchMoved = false;
+document.addEventListener('touchmove', () => { touchMoved = true; }, { passive: true });
+document.addEventListener('touchstart', () => { touchMoved = false; }, { passive: true });
 document.addEventListener('touchend', e => {
+  if (touchMoved) return;
   const slot = e.target.closest('.card-slot');
   if (!slot) return;
-  // Let the synthetic click fire → handleCardClick → moveCard
-}, { passive: true });
-
-document.addEventListener('touchmove', () => {
-  // nothing needed
-}, { passive: true });
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { clearTimeout(hoverTimer); hidePreview(); }
-});
+  e.preventDefault(); // prevent the synthetic click from double-firing
+  handleSlot(e.target);
+}, { passive: false });
 </script>
 </body>
 </html>
