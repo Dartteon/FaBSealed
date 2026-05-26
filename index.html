@@ -13,9 +13,9 @@
     --border: #252a40;
     --accent: #5b8dff;
     --accent2: #ff6b35;
-    --mythic: #f0b429;
-    --rare: #9b6dff;
-    --common: #8abfd4;
+    --mythic: #e03030;
+    --rare: #3a7fff;
+    --common: #e8e8e8;
     --text: #c8d0e8;
     --text-dim: #586080;
     --deck-glow: rgba(91,141,255,0.15);
@@ -276,31 +276,30 @@
   .card-slot:hover::before { opacity: 1; }
   .card-slot.mythic::before { box-shadow: 0 0 10px 1px var(--mythic); border: 1px solid var(--mythic); }
   .card-slot.rare::before { box-shadow: 0 0 8px 1px var(--rare); border: 1px solid var(--rare); }
-  .card-slot.common::before { box-shadow: 0 0 6px 1px rgba(138,191,212,0.4); border: 1px solid var(--common); }
+  .card-slot.common::before { box-shadow: 0 0 6px 1px rgba(232,232,232,0.4); border: 1px solid var(--common); }
 
-  /* EYE icon */
-  .eye-btn {
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.7);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 50%;
-    width: 22px;
-    height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 20;
-    cursor: pointer;
+  /* EYE icon — removed, preview is now hover/long-press */
+
+  /* FLOATING CARD PREVIEW */
+  .card-preview {
+    position: fixed;
+    z-index: 500;
+    pointer-events: none;
     opacity: 0;
-    transition: opacity 0.15s, background 0.15s;
-    backdrop-filter: blur(4px);
+    transform: scale(0.92);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    width: 220px;
+    filter: drop-shadow(0 12px 40px rgba(0,0,0,0.9));
   }
-  .card-slot:hover .eye-btn { opacity: 1; }
-  .eye-btn:hover { background: rgba(91,141,255,0.8); }
-  .eye-btn svg { width: 12px; height: 12px; fill: none; stroke: #fff; stroke-width: 1.5; }
+  .card-preview.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .card-preview img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+  }
 
   /* EMPTY STATE */
   .empty-zone {
@@ -316,73 +315,6 @@
     text-align: center;
     padding: 20px;
   }
-
-  /* MODAL */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-    backdrop-filter: blur(6px);
-  }
-  .modal-overlay.open { opacity: 1; pointer-events: all; }
-
-  .modal-card {
-    position: relative;
-    max-width: min(340px, 80vw);
-    width: 100%;
-  }
-
-  .modal-card img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-    display: block;
-  }
-
-  .modal-info {
-    margin-top: 12px;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 16px;
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-  .modal-info .card-name {
-    font-family: 'Cinzel', serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 4px;
-  }
-  .modal-info .card-type { color: var(--text-dim); font-size: 0.75rem; letter-spacing: 0.05em; }
-
-  .modal-close {
-    position: absolute;
-    top: -12px;
-    right: -12px;
-    width: 32px;
-    height: 32px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: var(--text);
-    font-size: 1.1rem;
-    line-height: 1;
-    transition: background 0.15s;
-  }
-  .modal-close:hover { background: #ff4545; color: #fff; }
 
   /* PACK OPEN ANIMATION */
   @keyframes packReveal {
@@ -412,7 +344,7 @@
   }
   .rarity-dot.mythic { background: var(--mythic); box-shadow: 0 0 4px var(--mythic); }
   .rarity-dot.rare { background: var(--rare); box-shadow: 0 0 4px var(--rare); }
-  .rarity-dot.common { background: var(--common); }
+  .rarity-dot.common { background: var(--common); box-shadow: 0 0 3px rgba(232,232,232,0.5); }
 
   /* Overflow warning */
   .over-limit {
@@ -479,16 +411,9 @@
 
 </div><!-- /#app -->
 
-<!-- Preview Modal -->
-<div class="modal-overlay" id="modal" onclick="closeModal(event)">
-  <div class="modal-card" id="modalCard">
-    <span class="modal-close" onclick="closeModal(null, true)">×</span>
-    <img id="modalImg" src="" alt="">
-    <div class="modal-info">
-      <div class="card-name" id="modalName"></div>
-      <div class="card-type" id="modalType"></div>
-    </div>
-  </div>
+<!-- Floating card preview -->
+<div class="card-preview" id="cardPreview">
+  <img id="previewImg" src="" alt="">
 </div>
 
 <script>
@@ -975,13 +900,11 @@ function cardHTML(card, zone) {
   const img = imgUrl(data.num);
   const r = data.rarity;
   return `
-    <div class="card-slot ${r}" data-uid="${card.uid}" data-zone="${zone}" onclick="moveCard(${card.uid},'${zone}')">
+    <div class="card-slot ${r}" data-uid="${card.uid}" data-zone="${zone}" data-name="${card.name.replace(/'/g,"&#39;")}"
+         onclick="handleCardClick(event,${card.uid},'${zone}')">
       <img src="${img}" alt="${card.name}" loading="lazy"
            onerror="this.src='https://d2h5owxb2ypf43.cloudfront.net/cards/cardback.webp'">
       <div class="rarity-dot ${r}"></div>
-      <div class="eye-btn" onclick="event.stopPropagation(); previewCard('${card.name}')">
-        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-      </div>
     </div>`;
 }
 
@@ -1048,26 +971,88 @@ function openPacks() {
 }
 
 // ===================== PREVIEW =====================
-function previewCard(name) {
+const preview = document.getElementById('cardPreview');
+const previewImg = document.getElementById('previewImg');
+const PREVIEW_W = 220;
+const PREVIEW_H = 308; // approx card height at 220px wide
+let hideTimer = null;
+let longPressTimer = null;
+let longPressTriggered = false;
+
+function showPreview(name, anchorEl) {
   const data = CARDS[name];
   if (!data) return;
-  document.getElementById('modalImg').src = imgUrl(data.num);
-  document.getElementById('modalImg').onerror = function() {
-    this.src = 'https://d2h5owxb2ypf43.cloudfront.net/cards/cardback.webp';
-  };
-  document.getElementById('modalName').textContent = name;
-  document.getElementById('modalType').textContent = data.type + ' · ' + data.rarity.toUpperCase();
-  document.getElementById('modal').classList.add('open');
+  previewImg.src = imgUrl(data.num);
+  previewImg.onerror = () => { previewImg.src = 'https://d2h5owxb2ypf43.cloudfront.net/cards/cardback.webp'; };
+
+  const rect = anchorEl.getBoundingClientRect();
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  // Prefer showing to the right; fall back to left
+  let left = rect.right + 10;
+  if (left + PREVIEW_W > vw - 8) left = rect.left - PREVIEW_W - 10;
+  // Vertical: center on card, clamp to viewport
+  let top = rect.top + (rect.height / 2) - (PREVIEW_H / 2);
+  top = Math.max(8, Math.min(top, vh - PREVIEW_H - 8));
+
+  preview.style.left = left + 'px';
+  preview.style.top  = top  + 'px';
+  preview.classList.add('visible');
 }
 
-function closeModal(event, force) {
-  if (force || !event || event.target === document.getElementById('modal')) {
-    document.getElementById('modal').classList.remove('open');
+function hidePreview() {
+  preview.classList.remove('visible');
+}
+
+// Delegate events on document — works for dynamically rendered cards
+document.addEventListener('mouseover', e => {
+  const slot = e.target.closest('.card-slot');
+  if (!slot) return;
+  if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+  showPreview(slot.dataset.name, slot);
+});
+
+document.addEventListener('mouseout', e => {
+  const slot = e.target.closest('.card-slot');
+  if (!slot) return;
+  // Only hide if we're leaving the slot entirely (not moving to a child)
+  if (slot.contains(e.relatedTarget)) return;
+  hideTimer = setTimeout(hidePreview, 80);
+});
+
+// Long-press for mobile
+document.addEventListener('touchstart', e => {
+  const slot = e.target.closest('.card-slot');
+  if (!slot) return;
+  longPressTriggered = false;
+  longPressTimer = setTimeout(() => {
+    longPressTriggered = true;
+    showPreview(slot.dataset.name, slot);
+  }, 500);
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+  clearTimeout(longPressTimer);
+  if (longPressTriggered) {
+    longPressTriggered = false;
+    hidePreview();
+    e.preventDefault(); // block the click that would move the card
   }
+}, { passive: false });
+
+document.addEventListener('touchmove', () => {
+  clearTimeout(longPressTimer);
+}, { passive: true });
+
+// Click handler — skip move if long press just fired
+function handleCardClick(e, cardUid, zone) {
+  if (longPressTriggered) return;
+  moveCard(cardUid, zone);
 }
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal(null, true);
+  if (e.key === 'Escape') hidePreview();
 });
 </script>
 </body>
