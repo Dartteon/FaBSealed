@@ -234,6 +234,10 @@
     gap: 6px;
   }
 
+  @media (max-width: 600px) {
+    .card-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
   .card-slot {
     position: relative;
     aspect-ratio: 63 / 88;
@@ -1087,29 +1091,15 @@ function handleCardClick(e, cardUid, zone) {
   moveCard(cardUid, zone);
 }
 
-// ---- TOUCH: hold 0.5s → show preview until finger lifts; quick tap → move ----
-document.addEventListener('touchstart', e => {
+// ---- TOUCH: always move on tap, no preview ----
+document.addEventListener('touchend', e => {
   const slot = e.target.closest('.card-slot');
   if (!slot) return;
-  pressTriggered = false;
-  pressTimer = setTimeout(() => {
-    pressTriggered = true;
-    showPreview(slot.dataset.name, slot);
-  }, DELAY);
+  // Let the synthetic click fire → handleCardClick → moveCard
 }, { passive: true });
 
-document.addEventListener('touchend', e => {
-  clearTimeout(pressTimer);
-  if (pressTriggered) {
-    pressTriggered = false;
-    hidePreview();
-    e.preventDefault(); // suppress the synthetic click → no moveCard
-  }
-  // if not triggered, the synthetic click fires → handleCardClick → moveCard
-}, { passive: false });
-
 document.addEventListener('touchmove', () => {
-  clearTimeout(pressTimer);
+  // nothing needed
 }, { passive: true });
 
 document.addEventListener('keydown', e => {
