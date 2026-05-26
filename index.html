@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OMN Sealed — Flesh & Blood Omens</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6S6F5JEC6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6S6F5JEC6K');
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -617,224 +625,240 @@ function imgUrl(num) {
 }
 
 // ===================== POOL DEFINITIONS =====================
+// ===================== POOLS (exact counts from config as weighted arrays) =====================
+function makePool(entries) {
+  const arr = [];
+  for (const [n, name] of entries) for (let i = 0; i < n; i++) arr.push(name);
+  return arr;
+}
+
 const POOLS = {
-  LightningIllusionist: [
-    "Cosmic Duality (red)","Cosmic Duality (yellow)","Cosmic Duality (blue)",
-    "Ebbing Arcstride (red)","Ebbing Arcstride (yellow)","Ebbing Arcstride (blue)",
-    "Pulsing Cardia (red)","Pulsing Cardia (yellow)","Pulsing Cardia (blue)",
-    "Shattering Flowtide (red)","Shattering Flowtide (yellow)","Shattering Flowtide (blue)",
-    "Auric Shards (red)","Auric Shards (yellow)","Auric Shards (blue)",
-    "Holo Shield (red)","Holo Shield (yellow)","Holo Shield (blue)",
-    "Circular Flowtide (yellow)","Elliptical Conflux (yellow)","Nebulus Cycle (yellow)",
-    "Crackle from Afar (blue)","Fleeing Starbreeze (blue)","Nourishing Glow (blue)"
-  ],
-  LightningRuneblade: [
-    "Electryn Joltstep (red)","Electryn Joltstep (yellow)","Electryn Joltstep (blue)",
-    "Quick Succession (red)","Quick Succession (yellow)","Quick Succession (blue)",
-    "Destructive Fleetfoot (red)","Destructive Fleetfoot (yellow)","Destructive Fleetfoot (blue)",
-    "Path of Same Ends (red)","Path of Same Ends (yellow)","Path of Same Ends (blue)",
-    "Rush of Power (red)","Rush of Power (yellow)","Rush of Power (blue)",
-    "Singeing Flowstride (red)","Singeing Flowstride (yellow)","Singeing Flowstride (blue)",
-    "Stunning Swipe (red)","Stunning Swipe (yellow)","Stunning Swipe (blue)",
-    "Voltbound Duality (red)","Voltbound Duality (yellow)","Voltbound Duality (blue)"
-  ],
-  LightningWizard: [
-    "Comet Collision (red)","Comet Collision (yellow)","Comet Collision (blue)",
-    "Enion Surge (red)","Enion Surge (yellow)","Enion Surge (blue)",
-    "Lightning Overload (red)","Lightning Overload (yellow)","Lightning Overload (blue)",
-    "Meteoric Impact (red)","Meteoric Impact (yellow)","Meteoric Impact (blue)",
-    "Nebula Duality (red)","Nebula Duality (yellow)","Nebula Duality (blue)",
-    "Tap Lessons Past (red)","Tap Lessons Past (yellow)","Tap Lessons Past (blue)",
-    "Cosmic Suture (red)","Cosmic Suture (yellow)","Cosmic Suture (blue)",
-    "Constella Contemplation (yellow)","Constella Flowslide (yellow)","Constella Uplift (yellow)"
-  ],
-  Lightning: [
-    "Astral Assault (red)","Astral Assault (yellow)","Astral Assault (blue)",
-    "Electrolyze (red)","Electrolyze (yellow)","Electrolyze (blue)",
-    "Flittering Spike (red)","Flittering Spike (yellow)","Flittering Spike (blue)",
-    "Glide Through Starlight (red)","Glide Through Starlight (yellow)","Glide Through Starlight (blue)",
-    "Heaven's Claws (red)","Heaven's Claws (yellow)","Heaven's Claws (blue)",
-    "Stellar Glide (red)","Stellar Glide (yellow)","Stellar Glide (blue)",
-    "Volatile Fluxor (red)","Volatile Fluxor (yellow)","Volatile Fluxor (blue)",
-    "Flittering Forcefield (red)","Flittering Forcefield (yellow)","Flittering Forcefield (blue)",
-    "Calmveil of Volthaven (red)","Calmveil of Volthaven (yellow)","Calmveil of Volthaven (blue)",
-    "Cosmic Flare (red)","Starworld Warning (yellow)","Starlight Road (blue)",
-    "Stormshard (red)","Stormshatter (yellow)","Stormwhirl (blue)",
-    "Chromatic Refinement (red)","Chromatic Refinement (yellow)","Chromatic Refinement (blue)",
-    "Thunderous Retort (red)","Thunderous Retort (yellow)","Thunderous Retort (blue)",
-    "Sigil of Astral Flow (blue)","Sigil of Lightning (blue)","Spellbane Sigil (blue)"
-  ],
-  Generic: [
-    "Conflicting Thoughts (red)","Conflicting Thoughts (yellow)","Conflicting Thoughts (blue)",
-    "Brush Off (red)","Brush Off (yellow)","Brush Off (blue)"
-  ],
-  Equipment: [
-    "Fingers of Fragmentation","Snap Fingers","Constella Waves","Constella Tiara",
-    "Starflow Robes","Laced Lightning","Seeker's Hood","Seeker's Gilet","Seeker's Mitts",
-    "Seeker's Leggings","Helm of Astral Sanctuary","Robe of Astral Sanctuary",
-    "Gloves of Astral Sanctuary","Boots of Astral Sanctuary"
-  ],
-  rare: [
-    "Blink of an Eye (red)","Fraying Lifeforce (red)","Scattering Conflux (red)",
-    "Polarus Pulse Ray (red)","Polarus Pulse Ray (yellow)","Polarus Pulse Ray (blue)",
-    "Corrosive Space Dust (red)","Corrosive Space Dust (yellow)","Corrosive Space Dust (blue)",
-    "Clear Conscience (red)","Clear Conscience (yellow)","Clear Conscience (blue)",
-    "Erode Authority (red)","Erode Authority (yellow)","Erode Authority (blue)",
-    "Dashing Flashfoot (yellow)","Electryn Mindmeld (yellow)","Prophetic Quickstep (yellow)",
-    "Stinging Sprite (red)","Stinging Sprite (yellow)","Stinging Sprite (blue)",
-    "Mercurial Skies (red)","Mercurial Skies (yellow)","Mercurial Skies (blue)",
-    "Arcanic Cunning (red)","Arcanic Cunning (yellow)","Arcanic Cunning (blue)",
-    "Leech Memory (red)","Leech Renown (red)","Leech Vitality (red)",
-    "Arc Ramp (red)","Arc Ramp (yellow)","Arc Ramp (blue)",
-    "Core Reaction (red)","Core Reaction (yellow)","Core Reaction (blue)",
-    "Flash Bolt (red)","Flash Bolt (yellow)","Flash Bolt (blue)",
-    "Aethersling (red)","Nucleus Aetherbolt (red)","Turn to Mindfire (red)",
-    "Haven Veil (red)","Haven Veil (yellow)","Haven Veil (blue)",
-    "Beckoning Brilliance (red)","Flowshard Elemental (red)","Lightning Form (red)",
-    "Visionary of Orbits (red)","Flowing Stormstrike (red)","Meteoric Rise (red)",
-    "Voltic Impact (red)","Rift Breaker (red)","Rift Breaker (yellow)","Rift Breaker (blue)",
-    "Flow Through (blue)","Livewire Press (red)","Ominous Aggression (red)",
-    "Ominous Excavation (blue)","Ominous Respite (yellow)"
-  ],
-  Mythic: [
-    "Unwinding Finality (red)","Flicker Reality (blue)","Fractal Creation (blue)",
-    "Tempestuous Kiss (red)","Arcanic Reproach (blue)","Caress of the Reaper (red)",
-    "Astral Bridge (red)","Echoflash (yellow)","Tome of Quandaries (blue)",
-    "Astral Strike (red)","Flowstate Embodiment (red)","Static Shelter (yellow)",
-    "Browbeat (blue)","Step Between (red)","Tempt Over (yellow)"
-  ],
-  RFCommon: [
-    "Cosmic Duality (red)","Cosmic Duality (yellow)","Cosmic Duality (blue)",
-    "Ebbing Arcstride (red)","Ebbing Arcstride (yellow)","Ebbing Arcstride (blue)",
-    "Pulsing Cardia (red)","Pulsing Cardia (yellow)","Pulsing Cardia (blue)",
-    "Shattering Flowtide (red)","Shattering Flowtide (yellow)","Shattering Flowtide (blue)",
-    "Auric Shards (red)","Auric Shards (yellow)","Auric Shards (blue)",
-    "Holo Shield (red)","Holo Shield (yellow)","Holo Shield (blue)",
-    "Circular Flowtide (yellow)","Elliptical Conflux (yellow)","Nebulus Cycle (yellow)",
-    "Crackle from Afar (blue)","Fleeing Starbreeze (blue)","Nourishing Glow (blue)",
-    "Fingers of Fragmentation","Snap Fingers",
-    "Destructive Fleetfoot (red)","Destructive Fleetfoot (yellow)","Destructive Fleetfoot (blue)",
-    "Path of Same Ends (red)","Path of Same Ends (yellow)","Path of Same Ends (blue)",
-    "Rush of Power (red)","Rush of Power (yellow)","Rush of Power (blue)",
-    "Singeing Flowstride (red)","Singeing Flowstride (yellow)","Singeing Flowstride (blue)",
-    "Stunning Swipe (red)","Stunning Swipe (yellow)","Stunning Swipe (blue)",
-    "Voltbound Duality (red)","Voltbound Duality (yellow)","Voltbound Duality (blue)",
-    "Electryn Joltstep (red)","Electryn Joltstep (yellow)","Electryn Joltstep (blue)",
-    "Quick Succession (red)","Quick Succession (yellow)","Quick Succession (blue)",
-    "Constella Waves","Enion Surge (red)","Enion Surge (yellow)","Enion Surge (blue)",
-    "Lightning Overload (red)","Lightning Overload (yellow)","Lightning Overload (blue)",
-    "Meteoric Impact (red)","Meteoric Impact (yellow)","Meteoric Impact (blue)",
-    "Nebula Duality (red)","Nebula Duality (yellow)","Nebula Duality (blue)",
-    "Tap Lessons Past (red)","Tap Lessons Past (yellow)","Tap Lessons Past (blue)",
-    "Cosmic Suture (red)","Cosmic Suture (yellow)","Cosmic Suture (blue)",
-    "Constella Contemplation (yellow)","Constella Flowslide (yellow)","Constella Uplift (yellow)",
-    "Constella Tiara","Starflow Robes","Laced Lightning",
-    "Astral Assault (red)","Astral Assault (yellow)","Astral Assault (blue)",
-    "Electrolyze (red)","Electrolyze (yellow)","Electrolyze (blue)",
-    "Flittering Spike (red)","Flittering Spike (yellow)","Flittering Spike (blue)",
-    "Glide Through Starlight (red)","Glide Through Starlight (yellow)","Glide Through Starlight (blue)",
-    "Stellar Glide (red)","Stellar Glide (yellow)","Stellar Glide (blue)",
-    "Volatile Fluxor (red)","Volatile Fluxor (yellow)","Volatile Fluxor (blue)",
-    "Flittering Forcefield (red)","Flittering Forcefield (yellow)","Flittering Forcefield (blue)",
-    "Calmveil of Volthaven (red)","Calmveil of Volthaven (yellow)","Calmveil of Volthaven (blue)",
-    "Cosmic Flare (red)","Starworld Warning (yellow)","Starlight Road (blue)",
-    "Stormshard (red)","Stormshatter (yellow)","Stormwhirl (blue)",
-    "Chromatic Refinement (red)","Chromatic Refinement (yellow)","Chromatic Refinement (blue)",
-    "Thunderous Retort (red)","Thunderous Retort (yellow)","Thunderous Retort (blue)",
-    "Sigil of Astral Flow (blue)","Sigil of Lightning (blue)","Spellbane Sigil (blue)",
-    "Helm of Astral Sanctuary","Robe of Astral Sanctuary","Gloves of Astral Sanctuary","Boots of Astral Sanctuary",
-    "Conflicting Thoughts (red)","Conflicting Thoughts (yellow)","Conflicting Thoughts (blue)",
-    "Comet Collision (red)","Comet Collision (yellow)","Comet Collision (blue)"
-  ],
-  RFRare: [
-    "Blink of an Eye (red)","Fraying Lifeforce (red)","Scattering Conflux (red)",
-    "Polarus Pulse Ray (red)","Polarus Pulse Ray (yellow)","Polarus Pulse Ray (blue)",
-    "Corrosive Space Dust (red)","Corrosive Space Dust (yellow)","Corrosive Space Dust (blue)",
-    "Clear Conscience (red)","Clear Conscience (yellow)","Clear Conscience (blue)",
-    "Erode Authority (red)","Erode Authority (yellow)","Erode Authority (blue)",
-    "Dashing Flashfoot (yellow)","Electryn Mindmeld (yellow)","Prophetic Quickstep (yellow)",
-    "Stinging Sprite (red)","Stinging Sprite (yellow)","Stinging Sprite (blue)",
-    "Mercurial Skies (red)","Mercurial Skies (yellow)","Mercurial Skies (blue)",
-    "Arcanic Cunning (red)","Arcanic Cunning (yellow)","Arcanic Cunning (blue)",
-    "Leech Memory (red)","Leech Renown (red)","Leech Vitality (red)",
-    "Arc Ramp (red)","Arc Ramp (yellow)","Arc Ramp (blue)",
-    "Core Reaction (red)","Core Reaction (yellow)","Core Reaction (blue)",
-    "Flash Bolt (red)","Flash Bolt (yellow)","Flash Bolt (blue)",
-    "Aethersling (red)","Nucleus Aetherbolt (red)","Turn to Mindfire (red)",
-    "Haven Veil (red)","Haven Veil (yellow)","Haven Veil (blue)",
-    "Beckoning Brilliance (red)","Flowshard Elemental (red)","Lightning Form (red)",
-    "Visionary of Orbits (red)","Flowing Stormstrike (red)","Meteoric Rise (red)",
-    "Voltic Impact (red)","Rift Breaker (red)","Rift Breaker (yellow)","Rift Breaker (blue)",
-    "Flow Through (blue)","Livewire Press (red)","Ominous Aggression (red)",
-    "Ominous Excavation (blue)","Ominous Respite (yellow)"
-  ],
-  RFMythic: [
-    "Unwinding Finality (red)","Flicker Reality (blue)","Fractal Creation (blue)",
-    "Tempestuous Kiss (red)","Arcanic Reproach (blue)","Caress of the Reaper (red)",
-    "Astral Bridge (red)","Echoflash (yellow)","Tome of Quandaries (blue)",
-    "Astral Strike (red)","Flowstate Embodiment (red)","Static Shelter (yellow)",
-    "Browbeat (blue)","Step Between (red)","Tempt Over (yellow)"
-  ]
+  LightningIllusionist: makePool([
+    [4,"Cosmic Duality (red)"],[4,"Cosmic Duality (yellow)"],[4,"Cosmic Duality (blue)"],
+    [4,"Ebbing Arcstride (red)"],[4,"Ebbing Arcstride (yellow)"],[4,"Ebbing Arcstride (blue)"],
+    [4,"Pulsing Cardia (red)"],[4,"Pulsing Cardia (yellow)"],[4,"Pulsing Cardia (blue)"],
+    [4,"Shattering Flowtide (red)"],[4,"Shattering Flowtide (yellow)"],[4,"Shattering Flowtide (blue)"],
+    [4,"Auric Shards (red)"],[4,"Auric Shards (yellow)"],[4,"Auric Shards (blue)"],
+    [4,"Holo Shield (red)"],[4,"Holo Shield (yellow)"],[4,"Holo Shield (blue)"],
+    [4,"Circular Flowtide (yellow)"],[4,"Elliptical Conflux (yellow)"],[4,"Nebulus Cycle (yellow)"],
+    [4,"Crackle from Afar (blue)"],[4,"Fleeing Starbreeze (blue)"],[4,"Nourishing Glow (blue)"],
+  ]),
+  LightningRuneblade: makePool([
+    [4,"Electryn Joltstep (red)"],[4,"Electryn Joltstep (yellow)"],[4,"Electryn Joltstep (blue)"],
+    [4,"Quick Succession (red)"],[4,"Quick Succession (yellow)"],[4,"Quick Succession (blue)"],
+    [4,"Destructive Fleetfoot (red)"],[4,"Destructive Fleetfoot (yellow)"],[4,"Destructive Fleetfoot (blue)"],
+    [4,"Path of Same Ends (red)"],[4,"Path of Same Ends (yellow)"],[4,"Path of Same Ends (blue)"],
+    [4,"Rush of Power (red)"],[4,"Rush of Power (yellow)"],[4,"Rush of Power (blue)"],
+    [4,"Singeing Flowstride (red)"],[4,"Singeing Flowstride (yellow)"],[4,"Singeing Flowstride (blue)"],
+    [4,"Stunning Swipe (red)"],[4,"Stunning Swipe (yellow)"],[4,"Stunning Swipe (blue)"],
+    [4,"Voltbound Duality (red)"],[4,"Voltbound Duality (yellow)"],[4,"Voltbound Duality (blue)"],
+  ]),
+  LightningWizard: makePool([
+    [4,"Comet Collision (red)"],[4,"Comet Collision (yellow)"],[4,"Comet Collision (blue)"],
+    [4,"Enion Surge (red)"],[4,"Enion Surge (yellow)"],[4,"Enion Surge (blue)"],
+    [4,"Lightning Overload (red)"],[4,"Lightning Overload (yellow)"],[4,"Lightning Overload (blue)"],
+    [4,"Meteoric Impact (red)"],[4,"Meteoric Impact (yellow)"],[4,"Meteoric Impact (blue)"],
+    [4,"Nebula Duality (red)"],[4,"Nebula Duality (yellow)"],[4,"Nebula Duality (blue)"],
+    [4,"Tap Lessons Past (red)"],[4,"Tap Lessons Past (yellow)"],[4,"Tap Lessons Past (blue)"],
+    [4,"Cosmic Suture (red)"],[4,"Cosmic Suture (yellow)"],[4,"Cosmic Suture (blue)"],
+    [4,"Constella Contemplation (yellow)"],[4,"Constella Flowslide (yellow)"],[4,"Constella Uplift (yellow)"],
+  ]),
+  Lightning: makePool([
+    [4,"Astral Assault (red)"],[4,"Astral Assault (yellow)"],[4,"Astral Assault (blue)"],
+    [4,"Electrolyze (red)"],[4,"Electrolyze (yellow)"],[4,"Electrolyze (blue)"],
+    [4,"Flittering Spike (red)"],[4,"Flittering Spike (yellow)"],[4,"Flittering Spike (blue)"],
+    [4,"Glide Through Starlight (red)"],[4,"Glide Through Starlight (yellow)"],[4,"Glide Through Starlight (blue)"],
+    [4,"Heaven's Claws (red)"],[4,"Heaven's Claws (yellow)"],[4,"Heaven's Claws (blue)"],
+    [4,"Stellar Glide (red)"],[4,"Stellar Glide (yellow)"],[4,"Stellar Glide (blue)"],
+    [4,"Volatile Fluxor (red)"],[4,"Volatile Fluxor (yellow)"],[4,"Volatile Fluxor (blue)"],
+    [4,"Flittering Forcefield (red)"],[4,"Flittering Forcefield (yellow)"],[4,"Flittering Forcefield (blue)"],
+    [4,"Calmveil of Volthaven (red)"],[4,"Calmveil of Volthaven (yellow)"],[4,"Calmveil of Volthaven (blue)"],
+    [4,"Cosmic Flare (red)"],[4,"Starworld Warning (yellow)"],[4,"Starlight Road (blue)"],
+    [4,"Stormshard (red)"],[4,"Stormshatter (yellow)"],[4,"Stormwhirl (blue)"],
+    [4,"Chromatic Refinement (red)"],[4,"Chromatic Refinement (yellow)"],[4,"Chromatic Refinement (blue)"],
+    [4,"Thunderous Retort (red)"],[4,"Thunderous Retort (yellow)"],[4,"Thunderous Retort (blue)"],
+    [4,"Sigil of Astral Flow (blue)"],[4,"Sigil of Lightning (blue)"],[4,"Spellbane Sigil (blue)"],
+  ]),
+  Generic: makePool([
+    [4,"Conflicting Thoughts (red)"],[4,"Conflicting Thoughts (yellow)"],[4,"Conflicting Thoughts (blue)"],
+    [4,"Brush Off (red)"],[4,"Brush Off (yellow)"],[4,"Brush Off (blue)"],
+  ]),
+  Equipment: makePool([
+    [6,"Fingers of Fragmentation"],[6,"Snap Fingers"],[6,"Constella Waves"],
+    [6,"Constella Tiara"],[6,"Starflow Robes"],[6,"Laced Lightning"],
+    [6,"Seeker's Hood"],[6,"Seeker's Gilet"],[6,"Seeker's Mitts"],[6,"Seeker's Leggings"],
+    [6,"Helm of Astral Sanctuary"],[6,"Robe of Astral Sanctuary"],
+    [6,"Gloves of Astral Sanctuary"],[6,"Boots of Astral Sanctuary"],
+  ]),
+  rare: makePool([
+    [2,"Blink of an Eye (red)"],[2,"Fraying Lifeforce (red)"],[2,"Scattering Conflux (red)"],
+    [2,"Polarus Pulse Ray (red)"],[2,"Polarus Pulse Ray (yellow)"],[2,"Polarus Pulse Ray (blue)"],
+    [2,"Corrosive Space Dust (red)"],[2,"Corrosive Space Dust (yellow)"],[2,"Corrosive Space Dust (blue)"],
+    [2,"Clear Conscience (red)"],[2,"Clear Conscience (yellow)"],[2,"Clear Conscience (blue)"],
+    [2,"Erode Authority (red)"],[2,"Erode Authority (yellow)"],[2,"Erode Authority (blue)"],
+    [2,"Dashing Flashfoot (yellow)"],[2,"Electryn Mindmeld (yellow)"],[2,"Prophetic Quickstep (yellow)"],
+    [2,"Stinging Sprite (red)"],[2,"Stinging Sprite (yellow)"],[2,"Stinging Sprite (blue)"],
+    [2,"Mercurial Skies (red)"],[2,"Mercurial Skies (yellow)"],[2,"Mercurial Skies (blue)"],
+    [2,"Arcanic Cunning (red)"],[2,"Arcanic Cunning (yellow)"],[2,"Arcanic Cunning (blue)"],
+    [2,"Leech Memory (red)"],[2,"Leech Renown (red)"],[2,"Leech Vitality (red)"],
+    [2,"Arc Ramp (red)"],[2,"Arc Ramp (yellow)"],[2,"Arc Ramp (blue)"],
+    [2,"Core Reaction (red)"],[2,"Core Reaction (yellow)"],[2,"Core Reaction (blue)"],
+    [2,"Flash Bolt (red)"],[2,"Flash Bolt (yellow)"],[2,"Flash Bolt (blue)"],
+    [2,"Aethersling (red)"],[2,"Nucleus Aetherbolt (red)"],[2,"Turn to Mindfire (red)"],
+    [2,"Haven Veil (red)"],[2,"Haven Veil (yellow)"],[2,"Haven Veil (blue)"],
+    [2,"Beckoning Brilliance (red)"],[2,"Flowshard Elemental (red)"],[2,"Lightning Form (red)"],
+    [2,"Visionary of Orbits (red)"],[2,"Flowing Stormstrike (red)"],[2,"Meteoric Rise (red)"],
+    [2,"Voltic Impact (red)"],[2,"Rift Breaker (red)"],[2,"Rift Breaker (yellow)"],[2,"Rift Breaker (blue)"],
+    [2,"Flow Through (blue)"],[2,"Livewire Press (red)"],
+    [2,"Ominous Aggression (red)"],[2,"Ominous Excavation (blue)"],[2,"Ominous Respite (yellow)"],
+  ]),
+  Mythic: makePool([
+    [2,"Unwinding Finality (red)"],[2,"Flicker Reality (blue)"],[2,"Fractal Creation (blue)"],
+    [2,"Tempestuous Kiss (red)"],[2,"Arcanic Reproach (blue)"],[2,"Caress of the Reaper (red)"],
+    [2,"Astral Bridge (red)"],[2,"Echoflash (yellow)"],[2,"Tome of Quandaries (blue)"],
+    [2,"Astral Strike (red)"],[2,"Flowstate Embodiment (red)"],[2,"Static Shelter (yellow)"],
+    [2,"Browbeat (blue)"],[2,"Step Between (red)"],[2,"Tempt Over (yellow)"],
+  ]),
+  RFCommon: makePool([
+    [1,"Cosmic Duality (red)"],[1,"Cosmic Duality (yellow)"],[1,"Cosmic Duality (blue)"],
+    [1,"Ebbing Arcstride (red)"],[1,"Ebbing Arcstride (yellow)"],[1,"Ebbing Arcstride (blue)"],
+    [1,"Pulsing Cardia (red)"],[1,"Pulsing Cardia (yellow)"],[1,"Pulsing Cardia (blue)"],
+    [1,"Shattering Flowtide (red)"],[1,"Shattering Flowtide (yellow)"],[1,"Shattering Flowtide (blue)"],
+    [1,"Auric Shards (red)"],[1,"Auric Shards (yellow)"],[1,"Auric Shards (blue)"],
+    [1,"Holo Shield (red)"],[1,"Holo Shield (yellow)"],[1,"Holo Shield (blue)"],
+    [1,"Circular Flowtide (yellow)"],[1,"Elliptical Conflux (yellow)"],[1,"Nebulus Cycle (yellow)"],
+    [1,"Crackle from Afar (blue)"],[1,"Fleeing Starbreeze (blue)"],[1,"Nourishing Glow (blue)"],
+    [1,"Fingers of Fragmentation"],[1,"Snap Fingers"],
+    [1,"Destructive Fleetfoot (red)"],[1,"Destructive Fleetfoot (yellow)"],[1,"Destructive Fleetfoot (blue)"],
+    [1,"Path of Same Ends (red)"],[1,"Path of Same Ends (yellow)"],[1,"Path of Same Ends (blue)"],
+    [1,"Rush of Power (red)"],[1,"Rush of Power (yellow)"],[1,"Rush of Power (blue)"],
+    [1,"Singeing Flowstride (red)"],[1,"Singeing Flowstride (yellow)"],[1,"Singeing Flowstride (blue)"],
+    [1,"Stunning Swipe (red)"],[1,"Stunning Swipe (yellow)"],[1,"Stunning Swipe (blue)"],
+    [1,"Voltbound Duality (red)"],[1,"Voltbound Duality (yellow)"],[1,"Voltbound Duality (blue)"],
+    [1,"Electryn Joltstep (red)"],[1,"Electryn Joltstep (yellow)"],[1,"Electryn Joltstep (blue)"],
+    [1,"Quick Succession (red)"],[1,"Quick Succession (yellow)"],[1,"Quick Succession (blue)"],
+    [1,"Constella Waves"],
+    [1,"Enion Surge (red)"],[1,"Enion Surge (yellow)"],[1,"Enion Surge (blue)"],
+    [1,"Lightning Overload (red)"],[1,"Lightning Overload (yellow)"],[1,"Lightning Overload (blue)"],
+    [1,"Meteoric Impact (red)"],[1,"Meteoric Impact (yellow)"],[1,"Meteoric Impact (blue)"],
+    [1,"Nebula Duality (red)"],[1,"Nebula Duality (yellow)"],[1,"Nebula Duality (blue)"],
+    [1,"Tap Lessons Past (red)"],[1,"Tap Lessons Past (yellow)"],[1,"Tap Lessons Past (blue)"],
+    [1,"Cosmic Suture (red)"],[1,"Cosmic Suture (yellow)"],[1,"Cosmic Suture (blue)"],
+    [1,"Constella Contemplation (yellow)"],[1,"Constella Flowslide (yellow)"],[1,"Constella Uplift (yellow)"],
+    [1,"Constella Tiara"],[1,"Starflow Robes"],[1,"Laced Lightning"],
+    [1,"Astral Assault (red)"],[1,"Astral Assault (yellow)"],[1,"Astral Assault (blue)"],
+    [1,"Electrolyze (red)"],[1,"Electrolyze (yellow)"],[1,"Electrolyze (blue)"],
+    [1,"Flittering Spike (red)"],[1,"Flittering Spike (yellow)"],[1,"Flittering Spike (blue)"],
+    [1,"Glide Through Starlight (red)"],[1,"Glide Through Starlight (yellow)"],[1,"Glide Through Starlight (blue)"],
+    [1,"Stellar Glide (red)"],[1,"Stellar Glide (yellow)"],[1,"Stellar Glide (blue)"],
+    [1,"Volatile Fluxor (red)"],[1,"Volatile Fluxor (yellow)"],[1,"Volatile Fluxor (blue)"],
+    [1,"Flittering Forcefield (red)"],[1,"Flittering Forcefield (yellow)"],[1,"Flittering Forcefield (blue)"],
+    [1,"Calmveil of Volthaven (red)"],[1,"Calmveil of Volthaven (yellow)"],[1,"Calmveil of Volthaven (blue)"],
+    [1,"Cosmic Flare (red)"],[1,"Starworld Warning (yellow)"],[1,"Starlight Road (blue)"],
+    [1,"Stormshard (red)"],[1,"Stormshatter (yellow)"],[1,"Stormwhirl (blue)"],
+    [1,"Chromatic Refinement (red)"],[1,"Chromatic Refinement (yellow)"],[1,"Chromatic Refinement (blue)"],
+    [1,"Thunderous Retort (red)"],[1,"Thunderous Retort (yellow)"],[1,"Thunderous Retort (blue)"],
+    [1,"Sigil of Astral Flow (blue)"],[1,"Sigil of Lightning (blue)"],[1,"Spellbane Sigil (blue)"],
+    [1,"Helm of Astral Sanctuary"],[1,"Robe of Astral Sanctuary"],
+    [1,"Gloves of Astral Sanctuary"],[1,"Boots of Astral Sanctuary"],
+    [1,"Conflicting Thoughts (red)"],[1,"Conflicting Thoughts (yellow)"],[1,"Conflicting Thoughts (blue)"],
+    [1,"Comet Collision (red)"],[1,"Comet Collision (yellow)"],[1,"Comet Collision (blue)"],
+  ]),
+  RFRare: makePool([
+    [1,"Blink of an Eye (red)"],[1,"Fraying Lifeforce (red)"],[1,"Scattering Conflux (red)"],
+    [1,"Polarus Pulse Ray (red)"],[1,"Polarus Pulse Ray (yellow)"],[1,"Polarus Pulse Ray (blue)"],
+    [1,"Corrosive Space Dust (red)"],[1,"Corrosive Space Dust (yellow)"],[1,"Corrosive Space Dust (blue)"],
+    [1,"Clear Conscience (red)"],[1,"Clear Conscience (yellow)"],[1,"Clear Conscience (blue)"],
+    [1,"Erode Authority (red)"],[1,"Erode Authority (yellow)"],[1,"Erode Authority (blue)"],
+    [1,"Dashing Flashfoot (yellow)"],[1,"Electryn Mindmeld (yellow)"],[1,"Prophetic Quickstep (yellow)"],
+    [1,"Stinging Sprite (red)"],[1,"Stinging Sprite (yellow)"],[1,"Stinging Sprite (blue)"],
+    [1,"Mercurial Skies (red)"],[1,"Mercurial Skies (yellow)"],[1,"Mercurial Skies (blue)"],
+    [1,"Arcanic Cunning (red)"],[1,"Arcanic Cunning (yellow)"],[1,"Arcanic Cunning (blue)"],
+    [1,"Leech Memory (red)"],[1,"Leech Renown (red)"],[1,"Leech Vitality (red)"],
+    [1,"Arc Ramp (red)"],[1,"Arc Ramp (yellow)"],[1,"Arc Ramp (blue)"],
+    [1,"Core Reaction (red)"],[1,"Core Reaction (yellow)"],[1,"Core Reaction (blue)"],
+    [1,"Flash Bolt (red)"],[1,"Flash Bolt (yellow)"],[1,"Flash Bolt (blue)"],
+    [1,"Aethersling (red)"],[1,"Nucleus Aetherbolt (red)"],[1,"Turn to Mindfire (red)"],
+    [1,"Haven Veil (red)"],[1,"Haven Veil (yellow)"],[1,"Haven Veil (blue)"],
+    [1,"Beckoning Brilliance (red)"],[1,"Flowshard Elemental (red)"],[1,"Lightning Form (red)"],
+    [1,"Visionary of Orbits (red)"],[1,"Flowing Stormstrike (red)"],[1,"Meteoric Rise (red)"],
+    [1,"Voltic Impact (red)"],[1,"Rift Breaker (red)"],[1,"Rift Breaker (yellow)"],[1,"Rift Breaker (blue)"],
+    [1,"Flow Through (blue)"],[1,"Livewire Press (red)"],
+    [1,"Ominous Aggression (red)"],[1,"Ominous Excavation (blue)"],[1,"Ominous Respite (yellow)"],
+  ]),
+  RFMythic: makePool([
+    [1,"Unwinding Finality (red)"],[1,"Flicker Reality (blue)"],[1,"Fractal Creation (blue)"],
+    [1,"Tempestuous Kiss (red)"],[1,"Arcanic Reproach (blue)"],[1,"Caress of the Reaper (red)"],
+    [1,"Astral Bridge (red)"],[1,"Echoflash (yellow)"],[1,"Tome of Quandaries (blue)"],
+    [1,"Astral Strike (red)"],[1,"Flowstate Embodiment (red)"],[1,"Static Shelter (yellow)"],
+    [1,"Browbeat (blue)"],[1,"Step Between (red)"],[1,"Tempt Over (yellow)"],
+  ]),
 };
 
-// Pack layouts with weights (from the original file's [Layouts] section)
-// Each layout: { weight, slots }
-// Most common base: 2 LI, 1 LR, 3 LW, 3 L, 1 G, 1 E + premium slot(s)
+// ===================== PACK LAYOUTS (all layouts verbatim from config file) =====================
+function L(w,li,lr,lw,l,g,e,...prem) {
+  const slots = [
+    {pool:"LightningIllusionist",count:li},
+    {pool:"LightningRuneblade",count:lr},
+    {pool:"LightningWizard",count:lw},
+    {pool:"Lightning",count:l},
+  ];
+  if (g > 0) slots.push({pool:"Generic",count:g});
+  slots.push({pool:"Equipment",count:e});
+  for (const p of prem) slots.push(p);
+  return {weight:w, slots};
+}
+function R(n){return {pool:"rare",count:n};}
+function M(n){return {pool:"Mythic",count:n};}
+const RFC={pool:"RFCommon",count:1};
+const RFR={pool:"RFRare",count:1};
+const RFM={pool:"RFMythic",count:1};
+
 const PACK_LAYOUTS = [
-  { weight: 1000000, slots: [
-    { pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
-    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
-    {pool:"Generic",count:1},{pool:"Equipment",count:1},
-    {pool:"rare",count:2},{pool:"RFCommon",count:1}
-  ]},
-  { weight: 175000, slots: [
-    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
-    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
-    {pool:"Generic",count:1},{pool:"Equipment",count:1},
-    {pool:"rare",count:2},{pool:"RFRare",count:1}
-  ]},
-  { weight: 35000, slots: [
-    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
-    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
-    {pool:"Generic",count:1},{pool:"Equipment",count:1},
-    {pool:"rare",count:2},{pool:"RFMythic",count:1}
-  ]},
-  { weight: 250000, slots: [
-    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
-    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
-    {pool:"Generic",count:1},{pool:"Equipment",count:1},
-    {pool:"rare",count:1},{pool:"Mythic",count:1},{pool:"RFCommon",count:1}
-  ]},
-  { weight: 43750, slots: [
-    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
-    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
-    {pool:"Generic",count:1},{pool:"Equipment",count:1},
-    {pool:"rare",count:1},{pool:"Mythic",count:1},{pool:"RFRare",count:1}
-  ]},
-  { weight: 8750, slots: [
-    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
-    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
-    {pool:"Generic",count:1},{pool:"Equipment",count:1},
-    {pool:"rare",count:1},{pool:"Mythic",count:1},{pool:"RFMythic",count:1}
-  ]},
-  { weight: 40000, slots: [
-    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
-    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
-    {pool:"Generic",count:1},{pool:"Equipment",count:1},
-    {pool:"Mythic",count:2},{pool:"RFCommon",count:1}
-  ]},
-  { weight: 7000, slots: [
-    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
-    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
-    {pool:"Generic",count:1},{pool:"Equipment",count:1},
-    {pool:"Mythic",count:2},{pool:"RFRare",count:1}
-  ]},
-  { weight: 1400, slots: [
-    {pool:"LightningIllusionist",count:2},{pool:"LightningRuneblade",count:1},
-    {pool:"LightningWizard",count:3},{pool:"Lightning",count:3},
-    {pool:"Generic",count:1},{pool:"Equipment",count:1},
-    {pool:"Mythic",count:2},{pool:"RFMythic",count:1}
-  ]},
+  // 2LI 2LR 3LW 3L 1G 1E
+  L(1000000,2,2,3,3,1,1,R(2),RFC), L(175000,2,2,3,3,1,1,R(2),RFR), L(35000,2,2,3,3,1,1,R(2),RFM),
+  L(250000,2,2,3,3,1,1,R(1),M(1),RFC), L(43750,2,2,3,3,1,1,R(1),M(1),RFR), L(8750,2,2,3,3,1,1,R(1),M(1),RFM),
+  L(40000,2,2,3,3,1,1,M(2),RFC), L(7000,2,2,3,3,1,1,M(2),RFR), L(1400,2,2,3,3,1,1,M(2),RFM),
+  // 2LI 2LR 2LW 3L 1G 1E
+  L(1000000,2,2,2,3,1,1,R(2),RFC), L(175000,2,2,2,3,1,1,R(2),RFR), L(35000,2,2,2,3,1,1,R(2),RFM),
+  L(250000,2,2,2,3,1,1,R(1),M(1),RFC), L(43750,2,2,2,3,1,1,R(1),M(1),RFR), L(8750,2,2,2,3,1,1,R(1),M(1),RFM),
+  L(40000,2,2,2,3,1,1,M(2),RFC), L(7000,2,2,2,3,1,1,M(2),RFR), L(1400,2,2,2,3,1,1,M(2),RFM),
+  // 2LI 2LR 3LW 2L 1G 1E
+  L(1000000,2,2,3,2,1,1,R(2),RFC), L(175000,2,2,3,2,1,1,R(2),RFR), L(35000,2,2,3,2,1,1,R(2),RFM),
+  L(250000,2,2,3,2,1,1,R(1),M(1),RFC), L(43750,2,2,3,2,1,1,R(1),M(1),RFR), L(8750,2,2,3,2,1,1,R(1),M(1),RFM),
+  L(40000,2,2,3,2,1,1,M(2),RFC), L(7000,2,2,3,2,1,1,M(2),RFR), L(1400,2,2,3,2,1,1,M(2),RFM),
+  // 2LI 2LR 3LW 3L 0G 1E (no Generic)
+  L(1000000,2,2,3,3,0,1,R(2),RFC), L(175000,2,2,3,3,0,1,R(2),RFR), L(35000,2,2,3,3,0,1,R(2),RFM),
+  L(250000,2,2,3,3,0,1,R(1),M(1),RFC), L(43750,2,2,3,3,0,1,R(1),M(1),RFR), L(8750,2,2,3,3,0,1,R(1),M(1),RFM),
+  L(40000,2,2,3,3,0,1,M(2),RFC), L(7000,2,2,3,3,0,1,M(2),RFR), L(1400,2,2,3,3,0,1,M(2),RFM),
+  // 3LI 1LR 2LW 3L 1G 1E
+  L(1000000,3,1,2,3,1,1,R(2),RFC), L(175000,3,1,2,3,1,1,R(2),RFR), L(35000,3,1,2,3,1,1,R(2),RFM),
+  L(250000,3,1,2,3,1,1,R(1),M(1),RFC), L(43750,3,1,2,3,1,1,R(1),M(1),RFR), L(8750,3,1,2,3,1,1,R(1),M(1),RFM),
+  L(40000,3,1,2,3,1,1,M(2),RFC), L(7000,3,1,2,3,1,1,M(2),RFR), L(1400,3,1,2,3,1,1,M(2),RFM),
+  // 3LI 2LR 1LW 3L 1G 1E
+  L(1000000,3,2,1,3,1,1,R(2),RFC), L(175000,3,2,1,3,1,1,R(2),RFR), L(35000,3,2,1,3,1,1,R(2),RFM),
+  L(250000,3,2,1,3,1,1,R(1),M(1),RFC), L(43750,3,2,1,3,1,1,R(1),M(1),RFR), L(8750,3,2,1,3,1,1,R(1),M(1),RFM),
+  L(40000,3,2,1,3,1,1,M(2),RFC), L(7000,3,2,1,3,1,1,M(2),RFR), L(1400,3,2,1,3,1,1,M(2),RFM),
+  // 1LI 3LR 2LW 3L 1G 1E
+  L(1000000,1,3,2,3,1,1,R(2),RFC), L(175000,1,3,2,3,1,1,R(2),RFR), L(35000,1,3,2,3,1,1,R(2),RFM),
+  L(250000,1,3,2,3,1,1,R(1),M(1),RFC), L(43750,1,3,2,3,1,1,R(1),M(1),RFR), L(8750,1,3,2,3,1,1,R(1),M(1),RFM),
+  L(40000,1,3,2,3,1,1,M(2),RFC), L(7000,1,3,2,3,1,1,M(2),RFR), L(1400,1,3,2,3,1,1,M(2),RFM),
+  // 2LI 3LR 1LW 3L 1G 1E
+  L(1000000,2,3,1,3,1,1,R(2),RFC), L(175000,2,3,1,3,1,1,R(2),RFR), L(35000,2,3,1,3,1,1,R(2),RFM),
+  L(250000,2,3,1,3,1,1,R(1),M(1),RFC), L(43750,2,3,1,3,1,1,R(1),M(1),RFR), L(8750,2,3,1,3,1,1,R(1),M(1),RFM),
+  L(40000,2,3,1,3,1,1,M(2),RFC), L(7000,2,3,1,3,1,1,M(2),RFR), L(1400,2,3,1,3,1,1,M(2),RFM),
+  // 1LI 2LR 3LW 3L 1G 1E
+  L(1000000,1,2,3,3,1,1,R(2),RFC), L(175000,1,2,3,3,1,1,R(2),RFR), L(35000,1,2,3,3,1,1,R(2),RFM),
+  L(250000,1,2,3,3,1,1,R(1),M(1),RFC), L(43750,1,2,3,3,1,1,R(1),M(1),RFR), L(8750,1,2,3,3,1,1,R(1),M(1),RFM),
+  L(40000,1,2,3,3,1,1,M(2),RFC), L(7000,1,2,3,3,1,1,M(2),RFR), L(1400,1,2,3,3,1,1,M(2),RFM),
+  // 2LI 1LR 3LW 3L 1G 1E
+  L(1000000,2,1,3,3,1,1,R(2),RFC), L(175000,2,1,3,3,1,1,R(2),RFR), L(35000,2,1,3,3,1,1,R(2),RFM),
+  L(250000,2,1,3,3,1,1,R(1),M(1),RFC), L(43750,2,1,3,3,1,1,R(1),M(1),RFR), L(8750,2,1,3,3,1,1,R(1),M(1),RFM),
+  L(40000,2,1,3,3,1,1,M(2),RFC), L(7000,2,1,3,3,1,1,M(2),RFR), L(1400,2,1,3,3,1,1,M(2),RFM),
+  // 1LI 2LR 2LW 3L 1G 1E
+  L(1000000,1,2,2,3,1,1,R(2),RFC), L(175000,1,2,2,3,1,1,R(2),RFR), L(35000,1,2,2,3,1,1,R(2),RFM),
+  L(250000,1,2,2,3,1,1,R(1),M(1),RFC), L(43750,1,2,2,3,1,1,R(1),M(1),RFR), L(8750,1,2,2,3,1,1,R(1),M(1),RFM),
+  L(40000,1,2,2,3,1,1,M(2),RFC), L(7000,1,2,2,3,1,1,M(2),RFR), L(1400,1,2,2,3,1,1,M(2),RFM),
 ];
 
 const TOTAL_WEIGHT = PACK_LAYOUTS.reduce((s, l) => s + l.weight, 0);
