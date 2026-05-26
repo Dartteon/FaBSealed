@@ -283,28 +283,7 @@
   .card-slot.rare::before { box-shadow: 0 0 8px 1px var(--rare); border: 1px solid var(--rare); }
   .card-slot.common::before { box-shadow: 0 0 6px 1px rgba(232,232,232,0.4); border: 1px solid var(--common); }
 
-  /* EYE icon — removed, preview is now hover/long-press */
-
-  /* FLOATING CARD PREVIEW */
-  .card-preview {
-    position: fixed;
-    z-index: 500;
-    pointer-events: none;
-    opacity: 0;
-    transform: scale(0.92);
-    transition: opacity 0.15s ease, transform 0.15s ease;
-    width: 220px;
-    filter: drop-shadow(0 12px 40px rgba(0,0,0,0.9));
-  }
-  .card-preview.visible {
-    opacity: 1;
-    transform: scale(1);
-  }
-  .card-preview img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
-  }
+  /* EYE icon — removed */
 
   /* EMPTY STATE */
   .empty-zone {
@@ -416,10 +395,6 @@
 
 </div><!-- /#app -->
 
-<!-- Floating card preview -->
-<div class="card-preview" id="cardPreview">
-  <img id="previewImg" src="" alt="">
-</div>
 
 <script>
 // ===================== CARD DATABASE =====================
@@ -1067,6 +1042,11 @@ function showPreview(name, anchorEl) {
 function hidePreview() {
   preview.classList.remove('visible');
 }
+
+preview.addEventListener('click', () => {
+  clearTimeout(hoverTimer);
+  hidePreview();
+});
 
 // ---- MOUSE: show after 0.5s hover, hide on leave ----
 document.addEventListener('mouseover', e => {
